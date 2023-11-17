@@ -1,0 +1,6 @@
+1)background-color
+2)background-image
+3)background-repeat:repeat-x, no-repeat,repeat-y
+4)background-position:left,center,top,center top
+5)background-attchment:fixed,scroll
+6)background-size: auto;

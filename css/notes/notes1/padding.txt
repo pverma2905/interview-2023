@@ -1,0 +1,23 @@
+1)padding: 25px 50px 75px 100px;
+top padding is 25px
+right padding is 50px
+bottom padding is 75px
+left padding is 100px
+
+2)padding: 25px 50px 75px;
+top padding is 25px
+right and left paddings are 50px
+bottom padding is 75px
+
+3)padding: 25px 50px;
+top and bottom paddings are 25px
+right and left paddings are 50px
+
+4)<div> element is given a width of 300px. 
+However, the actual width of the <div>
+element will be 350px (300px + 25px of left padding + 25px of right padding):
+
+5)To keep the width at 300px, no matter the amount of padding,
+you can use the box-sizing property. This causes the element 
+to maintain its actual width; if you increase the padding,
+the available content space will decrease.

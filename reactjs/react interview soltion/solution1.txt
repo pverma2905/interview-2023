@@ -1,0 +1,51 @@
+1)event.persist()?
+on click event get in asyvhrously to overcome undefined used event.persist()
+
+2)what is synthetic events?
+e(event) is the synthetic event.
+synthetic event wrapper over native event
+cross browser compatibility issue hota hai . every browser have own engine handle event .it wrapper over those event it resolve all cross browser issue
+in javascript
+onclick, onsubmit
+
+in react
+onClick, onSubmit
+
+3)pure component in class component but in function we use useMemo?
+it stop the rerendering
+pure component check setState before and after is same or not if same it is not rerendering .not rerender
+
+
+4)useMemo?
+it stop the rerendering
+ex)if we update the state the other function is call to stop this we use useMemo()?
+
+5)useState?
+
+6)useEffect?
+
+7)useContext?
+
+8)useLayout?
+
+9)use reducer?
+
+10)useCallback()?
+
+11)useRef?
+
+12)useTransition?
+
+13)useDeffered value
+
+14)useId?
+
+15)seo in react js?
+
+16)Reconsilation?
+
+17)shallow rerendering?
+
+18)rendering highjacking?
+
+19)jsx?

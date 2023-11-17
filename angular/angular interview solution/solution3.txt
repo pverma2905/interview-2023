@@ -1,0 +1,10 @@
+1)content child vs content children?
+2)view child vs view children?
+3)what is map?
+4)what is switchMap?
+5)what is exhaustMap?
+6)what is mergeMap?
+7)what is concatMap?
+8)what is flatMap?
+9)what is hot and cold observable?
+10)differnce b/w switchMap, mergeMap, concatMap,exhaustMap?

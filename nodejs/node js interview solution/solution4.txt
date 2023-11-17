@@ -1,0 +1,58 @@
+31)what is the use of repl in node js?
+REPL stands for read eval print loop
+it provide a virtual environment to test javascript code in node js
+
+32)tracing in node js?
+
+33)differnce b/w readFile and createReadStream in node js ?
+readFile:-Read All the contents in an asynchronous manner
+
+createReadStream:-break the contents in smaller chunks. 
+it is used for large files
+the default size of chunks is 64kb that can be change as per requirment
+
+34)crypto module in node js?
+this module provide cryptograhic functionality
+
+it provide large no of wrappers to perform various operation
+1)cipher
+2)decipher
+3)signing
+4)hashing
+
+35)what is passport in node js?
+Passport is authentication middleware for Node.js
+in there 500+ stratgies
+like:-
+ OAuth, JWT, and simple username and password based authentication
+
+
+36)how to get information about file in  node js?
+fs.stat(path, callback)
+
+37)how does dns lookup function work in node js?
+
+38)event emitter in node js?
+The EventEmitter class can be used to create and handle custom events module.
+EventEmitter is a class that includes all the objects capable of emitting events. This can be achieved by attaching named events that are emitted by the object using an eventEmitter.on() function. Thus whenever this object throws an event, the attached functions are invoked synchronously.
+
+// Importing events
+const EventEmitter = require('events');
+   
+// Initializing event emitter instances 
+var eventEmitter = new EventEmitter();
+  
+// Registering to myEvent 
+eventEmitter.on('myEvent', (msg) => {
+   console.log(msg);
+});
+  
+// Triggering myEvent
+eventEmitter.emit('myEvent', "First event");
+
+39)differnce b/w setImmediate and setTimeout() and setInterval?
+setImmediate:-execute at the end of event loop
+setTimeout:-Aftr a desinated  amount of millisecond
+setInterval:- execute multiple times
+
+40)what is package.json file?

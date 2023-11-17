@@ -1,0 +1,214 @@
+1)what is first class function in javascript?
+(i)in javascript we can assign to a function to a variable
+ex) const thankyou = function(){
+    console.log("than you so much")
+}
+
+(ii) pass function as a argument
+ex) 
+const myname = ()=>{
+    return "Hello";
+}
+
+const greeting = (sayHi, name)=>{
+    console.log(sayHi(), name)
+}
+
+greeting(myName,"pranav")
+
+
+(iii) function return a another function 
+
+function a(){
+    return function  b(){
+        console.log("test")
+    }
+}
+
+//a()()
+
+const c=a();
+c()
+
+2)What is callback? 
+
+Any function is passed as an argument in another function is called a callback function
+
+const test = (name, callBack)=>{
+    setTimeout(()=>{
+        console.log("person one is calling ",name)
+       callBack()
+   },2000)
+}
+
+const test1=()=>{
+    console.log("persontwo is calling")
+}
+test("pranav",test1)
+
+3)callback hell ??
+callback hell is condition nested callBack 
+every callback depend on previous callBack
+code is messy and chance of error is more therfore we not used for nested callBack.we use, promise ,async -await
+
+4)Prototype in javascript?
+One object inherit the property of another object
+ex) let a={
+    name:"pranav"
+}
+
+let p = {
+    age:30
+}
+a.__proto__=p;
+console.log(a.age)
+
+
+// for custom property
+Object.prototype.myData="test data";
+console.log(a.myData)
+
+// for custom prototype
+
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+
+const myFather = new Person("John", "Doe", 50, "blue");
+
+5)Inheritence is possible in javascript?
+yes, by using Prototype it is possible
+
+6)curring function ??
+function Addition(a){
+    return function(b){
+        return function(c){
+            return a+b+c;
+        }
+    }
+}
+
+let res = Addition(2)(4)(7)
+console.log(res)
+
+7)infinite curring?
+function add(a){
+    return function(b){
+        if(b){
+         return add(a+b);   
+        }else{
+            return a;
+        }
+    }
+}
+
+let res = add(2)(4)(7)()
+console.log(res)
+
+8)memoization?
+It is an optimization technique that can be reduce the time consuming calculation by saving the previous input.
+
+let sum=0;
+const calc = (n)=>{
+    for(let i=0; i<n; i++){
+        sum+=i;
+    }
+    return sum;
+}
+
+const memoize = (fun)=>{
+    let cache={};
+    return function(...args){
+        let n=args[0];
+        if(n in cache){
+            console.log("cache")
+            return cache[n];
+        }else{
+            console.log("Calculating first time...");
+            let result = fun(n);
+            cache[n]= result;
+            return result;
+        }
+    }
+}
+console.time();
+const efficient= memoize(calc);
+console.log(efficient(5))
+//console.log(calc(10));
+console.timeEnd()
+
+console.time();
+console.log(efficient(5))
+//console.log(calc(10));
+console.timeEnd()
+
+9)Debouncing?
+it is used in searchbox, windowResize, scroll 
+
+
+10)map, set, weakMap, weakSet?
+set -> it contains only unique values
+ex)
+let myArray=[1,2,3,4];
+let obj = new Set(myArray);
+console.log(obj)
+let obj1={name:"pranav"}
+obj.add(obj1)
+obj.add(5);
+obj.add(5);
+obj.delete(5);
+console.log(obj)
+console.log(obj.has(1))
+//obj.clear();
+//console.log(obj)
+for(let new1 of obj){
+    console.log(new1)
+}
+map-> it store a data in key,value form
+let myMap=new Map([["a1","Ajay"],["a2","anil"]]);
+myMap.set("a2","vikas");
+console.log(myMap)
+for(let [key,value] of myMap){
+    console.log(`keys ${key}, value ${value}`)
+}
+myMap.forEach((value,key)=>{
+   console.log(`keys ${key}, value ${value}`)
+})
+myMap.delete("a1")
+console.log(myMap)
+myMap.clear();
+console.log(myMap)
+
+weakSet-> it store object  but not iterate
+let ws = new WeakSet();
+let obj={"name":"pranav"}
+let obj1={} 
+ws.add(obj)
+ws.add(obj1)
+console.log(ws)
+ws.delete(obj1)
+console.log(ws)
+console.log(ws.has(obj))
+
+
+weakMap->it store object  but not iterate
+let wm=new WeakMap();
+let obj5={"name":"ajay"};
+let obj6={};
+wm.set(obj5,"private")
+wm.set(obj6,"private data")
+console.log(wm);
+console.log(wm.has(obj6))
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,115 @@
+11) array as string?
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let text = fruits.join(" and ");
+
+11)string to array?
+split()
+
+12)find unique no?
+I)
+arr=[1,2,3,4,5,2,3,4];
+console.log(Array.from(new Set(arr)))
+
+II)
+let unique=arr.filter((item,i,ar)=>arr.indexOf(item)==i)
+console.log(unique)
+
+13)find duplicate no?
+arr=[1,2,3,4,5,2,3,4];
+let unique=arr.filter((item,i,ar)=>arr.indexOf(item)!=i)
+console.log(unique)
+
+14)capitalize in string?
+str="pranav"
+ const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
+console.log(capitalized);
+
+15)convert string to titlecase?
+function toTitleCase(str) {
+  str = str.toLowerCase().split(' ');
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  return str.join(' ');
+}
+console.log(toTitleCase("WELCOME TO W3DOCS")); 
+
+16)sum of two no is zero?
+function test(arr){
+for(let i of arr){
+    for(let j=0; j<arr.length; j++){
+        if(i+arr[j]==0){
+            return [i,arr[j]]
+        }
+    }
+}    
+}
+res=test([1,2,3,-1,-2])
+console.log(res)
+
+17) anagram ?
+function checkStringsAnagram(a, b) {
+   let len1 = a.length;
+   let len2 = b.length;
+   if(len1 !== len2){
+      console.log('Invalid Input');
+      return
+   }
+   let str1 = a.split('').sort().join('');
+   let str2 = b.split('').sort().join('');
+   if(str1 === str2){
+      console.log("True");
+   } else { 
+      console.log("False");
+   }
+}
+checkStringsAnagram("indian","ndiani")
+
+
+18)palidrome no?
+function checkPalidrome(x){
+  arrayVal = x.split('');
+  reverseArrayVal=arrayVal.reverse();
+  if(arrayVal===reverseArrayVal){
+    console.log("It is a plaidrome");
+  }else{
+    console.log("It is not a palidrome");
+  }
+}
+checkPalidrome("madam")
+
+19) armstrong range?
+function ArmstrongNumber(x,y){
+    for(let i=x; i<=y;i++){
+        let temp=i;
+        let sum=0;
+        while(temp>0){
+            let remainder = temp%10;
+            sum+= remainder*remainder*remainder;
+            temp=parseInt(temp/10);
+            }
+        if(sum==i){
+            console.log(i);
+        }
+    }
+}
+ArmstrongNumber(5,500);
+
+20)armstrong no?
+function checkArmStrong(n){
+let temp=n;
+let sum=0;
+while(temp>0){
+    let remainder = temp%10;
+    sum+=remainder*remainder*remainder;
+    temp = parseInt(temp/10); 
+}
+if(sum==n){
+    console.log(`${n} is a armstrong number`);
+}else{
+    console.log(`${n} is not a armstrong number`)
+}
+
+}
+
+checkArmStrong(153)

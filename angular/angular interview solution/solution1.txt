@@ -1,0 +1,117 @@
+1)Data binding: 
+it is 4 type 
+a)interpolation
+b)eventBinding
+c)propertyBinding
+d)two way binding
+
+2)differnce b/w property binding and interpollation?
+When input is not a string we use property binding.because interpolation convert each input to string
+*ngFor loop not use property binding to show the listing
+
+3)What is directive in angular?
+By using the dom we can manipulate the dom layout
+In Angular there is a 3 type of directive
+a)component
+b)attribute-(ngStyle,ngClass)(Change the appearance and behavior of an element)
+c)structural (*ngIF, *ngFor,*ngSwitch)(change the dom layout by adding and removing the dom element )
+
+4)@input decorator?
+Pass data from parent to child component
+
+5)@output decorator?
+Pass data from child to parent component
+
+6)pipes?
+Pipes is transform data to desired output before display
+Two type of pipes are there
+a)Custom pipe
+b)built in pipe
+
+7)BuiltInPipe?
+a)upperCase
+b)lowerCase
+c)titleCase
+d)date
+e)currency
+f)percent
+g)number
+h)slice
+i)Json
+j)Async
+
+8)Route Guard?
+Router guards are interfaces which tell to the router whether to allow the navigation or not 
+If guard return true navigation work and if false navigation is cancel
+
+9) type of guards?
+a)canActivate->before visiting the route.it check route is access or not
+b)canActivateChild->it check child route is visited or not
+c)candeactivate-> before leaving the route it check permission
+d)resolve->until the data is not resolve route will wait 
+e)CanLoad->it check the route is lazy loaded or not
+f)can match->
+
+10)angular module?
+
+Benefit of modules->
+1)code Maintainibility(loosely coupled)
+2)scalibility
+3)lazyloading
+4)abstraction
+
+By default Angular module are eagerly load->means when application load all modules is load
+
+11)Loading Stategy?
+a) pre loading
+b)lazy loading
+c)eager loading
+
+12)lazy loading?
+It load javascript component asynchronously
+It improve the speed of application loading time by splitting the application in several bundle
+
+13)promises and observable?
+Handling asynchronous operation handle in angular using promises and Observable 
+
+Promise:
+It is eager
+Promise emit single value
+Not apply any operator
+Not cancel the promise
+
+Observable:-
+Observable is lazy
+Observable emit multiple value
+Many operator  we apply on observable
+But we cancel the Observable
+
+14)Subject vs Observable??
+a)Subject are multicast->it return same data for multiple subscriber(same api call two times for multiple subscriber)
+b)Subject are hot
+ 
+a)Observable are unicast->it return different data for multiple subscriber(same  api call for one time for multiple subscriber)
+b)Observable are cold 
+
+15) Subject Vs BehaviourSubject?
+Subject does not hold a value
+When we subscribe subject it not emit any value
+After next() we try to subscribe not get any value
+
+Behavior subject hold a value and when subscribe it emit a value
+When we subscribe a behaviourSubject it emit  value
+After next() we try to subscribe  get value
+
+16) Behaviour Subject Vs ReplySubject?
+BehaviourSubject->
+It hold the initial value
+It emit the old value to new subscriber
+
+Reply Subject->
+It does not hold any initial value
+It emit the last value
+
+17)async Subject->
+1)last value of the observable execution sent to its subscriber only when execution complete 
+
+

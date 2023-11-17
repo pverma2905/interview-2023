@@ -1,0 +1,181 @@
+FE Dev Interview
+
+
+
+1)pwa?
+# it work offline
+# one app work on multiple platform(angdroid,ios both)
+# pwa are smooth, fast , lightweighted
+
+pwa works?
+ it help for javascript workers (service worker) call api . workers check data are availble in cache or not .if availble send data for cache otherwise send api call to server .get response from server store in cache and send the response from cache
+
+ push notification
+ offline data rendering
+ background synchronization
+
+ng add @angular/pwa
+ng build --prod
+npm i -g http-server
+
+2)pure and impure pipes?
+pure:-only called when value is changes
+this will not chck every page change event
+by default pure pipe is true
+more performance
+
+impure:-call every time any other value changes
+pure:false
+this will not chck every page change event
+less performance
+
+
+
+3)lifecycle of angular?
+#constructor
+#ngOnChanges
+#ngDoCheck
+#ngAfterContentInit
+#ngAfterContentChecked
+#ngAfterViewInit
+#ngAfterViewChecked
+#ngOnDestroy
+
+4)bootstraping in angular?
+it is process of initialising angular application by loaduing the root module and initialising the component tree
+it is the first step in running an angular application
+angular have main.ts file responsble for bootstraping the angular
+in the bootstraping module is invoked
+root module is defining the components,services, other module
+
+
+5)view encapsulation?
+it restrict the scope of style
+three type of view encapsulation:-
+#)emulated-> it is default
+this allow style scoped to th component, but still allow inherited to the parent component
+
+#)native-> implement the shadowdom provide true encapsultion. 
+component style are completely isolated from rest of the application and can not affect by an external style
+
+#)none->disable the view encapsulation and allow component style afftect the other part of application 
+
+6)optimize performance of angular application?
+#) reduce the bundle size: acheive by lazyloading, treeShaking, code splitting
+#)optimize angular templates: track by for ngFor loop, on push change detection strategy, minimize the no of binding and eventHandler
+#)Aot Compilation:- it generate the optimize code at buid time rather than run time . improve the overall performance
+#)optimize the change detection Stategy:- onpush change detection Stategy,immutability, pure pipes
+#)use web worker: it improve the performance for computational task to a seprate thread
+#) optime api request
+#)use caching and compression
+
+
+
+7)dependency injection?
+it is design pattern in angular that allow component and services loosely coupled and easily tested
+
+DI is inject dependency into component and serverice using constructor injection.
+component and service load its depencdency are automatically resolved
+this allow to thee developer write code more modular and resulable, flxible,testable  code leading to more robust and scalable application
+
+8) async pipe?
+it is an built in pipe
+that allow asynchronous data source such as observable and promise
+1)it eleminate manully subscribe and unsubscribe the data instead simple pass observable data source
+2)automatic change detection when new data is emit
+3)it avoid unneccary change detection 
+4)better error handling:- when an error occur. async pipe unsubsribe the data source and mark the observable is error which help for error handling
+
+<div *ngIf="observableData|async as mydata">
+{{mydata}}
+
+</div>
+
+9)@ngModule pupose?
+it is core building block in angular application 
+organize and configure tha application 
+it is container that group together service,pipes, directive , component
+
+the purpuse of ngModule organize ,modular into smaller and mangeble pieces. break in to samller modules it become maintable, scalable te application
+
+it enbale the lazy Loading by splitting  to smaller module
+
+@ngModule({
+    declarions:[],
+    imports:[],
+    providrs:[]
+})
+
+10)observable?
+1)handle asynchrous data it emit one or more  values
+2)observable handle events, data strem, http request
+3)Observable are created and manipulate by using rxjs operators
+like:map,filter,reduce
+4)http request also send a obsevvable data we  can subscribed
+
+11)Tyscript?
+it is super set of javascript are
+static typing,classes,interface help code maintable and scalable
+
+12) handle data communication?
+1)service
+
+13)angular router?
+it mange the navigation to another component
+
+14)lazy loading?
+
+{path:'', loadChildren:()=>import("lazymodule").then(m=>m.lazyModue)}
+
+15)internationalisation?
+ng add @angular/localize
+
+16)authentication and Authorizarion
+
+1)store token in cokies and localstorage
+2)create http interceptor autmatically add token to outgoing request
+3)create an authentication service for login,logout, handle refreshing  the access token when expire 
+4)handle  route guards to protect routesbased onuser authentication
+
+
+17)handle error in angular application?
+1)error handling service
+2)global error handler
+3)http interceptor for handle error
+
+18)how would you handle cross site scripting(XSS) attack in angular?
+
+bypassSecurityTrustHtml
+bypassSecurityTrustScript
+bypassSecurityTrustStyle
+bypassSecurityTrustUrl
+bypassSecurityTrustResourceUrl
+
+used AOT compilation
+
+avoid using innerHtml
+
+used Domsaizer to sanitize html before adding to dom
+
+use http client
+
+built in sanitize function for user input
+
+
+19)change detection strategies?
+two ways:-
+1)default change detection strategies:- angular check all component and child component whenever an event occur or data is updated
+this is not used for larger application
+2)on push  change detection strategy:-
+if no change angular skip the changes
+it check the component and its properties only when new refrenced is passed to @input
+
+changeDetection:ChangeDetectionStrategy.OnPush
+
+20)service worker?
+without net caching ,proxies
+
+21) angular universal?
+for seo
+
+22)pipe for prime no range

@@ -1,0 +1,7 @@
+1)####border:1px solid red;
+2)##border-top
+  ##border-left
+  ##border-right
+  ##border-bottom
+  ##border-style
+3)#####border-radius

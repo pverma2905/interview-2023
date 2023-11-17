@@ -1,0 +1,81 @@
+31) sum of 10?
+arr= [0,1,2,3,4,5,6,7,8,9];
+target_sum = 10;
+obj={};
+newObj=[];
+// let key;
+//let key1;
+for(let i=0; i<arr.length;i++){
+      let key2=arr[i];
+    for(let j=0; j<arr.length;j++){
+      let  key1=arr[j];
+  
+        if(arr[i]+arr[j]==10){
+          //  console.log(arr[i],arr[j])
+        newObj.push({[key2]:key1})
+        }
+    }
+}
+ console.log(newObj)
+
+ 
+32)recusion of sum?
+
+33)possible way of substring?
+
+result=[];
+function allSubstring(x){
+    for(let i=0; i<x.length; i++){
+        for(j=i+1; j<x.length+1; j++){
+          result.push(x.slice(i,j))  
+        }
+    }
+    console.log(result)
+}
+
+allSubstring("test")
+
+34)second smallest number?
+
+35)output:-
+const person = {
+    firstName:'Bat',
+    lastName: 'man',
+    printMyName(){
+        const fullName= function(){
+            return `${this.firstName}${this.lastName}`
+        }
+        console.log(`Full name is ${fullName()}`)
+    }
+    }
+    person.printMyName()
+
+
+result:-
+     console.log(`Full name is ${fullName.bind(this)()}`)
+     or 
+     arrow function
+
+36)output:-
+
+console.log(1);
+setTimeout(function () {
+  console.log(2);
+}, 0);
+Promise.resolve()
+  .then(function () {
+    console.log(3);
+  })
+  .then(function () {
+    console.log(4);
+  });
+for(i=0; i<=10000000; i++){
+    // blocking..........
+}
+console.log(5)
+
+37)sorting without  using sort function?
+
+38)
+
+

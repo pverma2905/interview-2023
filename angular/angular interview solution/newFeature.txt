@@ -1,0 +1,7 @@
+1)angular 13?
+#release on 3 nov 2021
+#typescript 4.4
+#remove of IE 11 support
+#removal of view engine 100% ivy
+#node stable version 16.14.2,12.2 support remove
+#rxjs 7.4

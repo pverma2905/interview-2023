@@ -1,0 +1,25 @@
+Execution context has 3 property
+1)variable object
+2)scope chain
+3) this variable
+
+Execution Context has two phase:-
+1)creation phase 
+
+variable object created + scope chain created + this kisko point kar raha hai 
+
+2)execution phase
+
+current execution context run lin by line
+
+variable Object->
+each function and each variable propery created in variable object
+
+hositing are performed in variable object
+
+Hositing-> variable  and function declarion are moved to the top of their scope before code execution
+
+Hoisting are two type
+
+1)varibale Hoisting
+2)function hoisting

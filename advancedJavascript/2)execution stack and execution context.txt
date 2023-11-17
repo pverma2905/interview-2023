@@ -1,0 +1,9 @@
+Global execution context- Javascript create global execution context  before start execution.
+function and variable are stored in global execution context initailly
+After code going to execute each function create own execution context
+It is associated with global object and window object
+variable stored in global execution stack
+
+Execution context - It is a environment in which code is executed, Each function create own execution stack
+
+Execution stack- It store all execution station during code execution

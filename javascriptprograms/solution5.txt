@@ -1,0 +1,125 @@
+################################# Quick Tech #######################################
+//1) count each no..
+
+let arr = [1,2,3,4,1,1,2,3];
+let obj = {};
+arr.forEach(data=>{
+    obj[data]=obj[key]+1||1
+})
+console.log("xxx",obj)
+
+######################  Remove ###########################
+####Remove1
+//2) remove specific no multple remove..
+
+
+const removeItem = (arr,value)=>{
+    let i=0;
+    while(i<arr.length){
+        if(arr[i]===value){
+            arr.splice(i,1)
+        }else{
+            ++i;
+        }
+    }
+    console.log(arr)
+
+}
+removeItem([1,2,3,4,1,1,2,3],1)
+console.log("xxx",obj)
+
+
+3)single item remove?    ####Remove2
+const removeItem = (arr, value)=>{
+    let index =  arr.indexOf(value);
+    if(index>-1){
+     arr.splice(index,1)
+    }
+    console.log(arr)
+}
+removeItem(arr,i)
+
+let arr = [1,2,3,4,1,1,2,3];
+
+
+4)Multiple remove With Filter?
+const removeItem = (arr, value)=>{
+arr = arr.filter(ele=>ele!=value)
+console.log(arr)
+}
+removeItem([1,2,3,4,1,1,2,3],1)
+
+5)remove?
+arr1=[1,2,3];
+arr2=[1,2,3,4,5];
+
+const remove = (arr1,arr2)=>{
+arr2 = arr2.filter(ele=>!arr1.includes(ele));
+console.log(arr2)
+}
+remove([1,2,3],[1,2,3,4,5])
+
+6)unique?
+let arr = [1,2,3,4,1,2];
+console.log(...new Set(arr))
+
+7)unique?
+let arr = [1,2,3,4,1,2];
+newArr = [];
+arr.map((data)=>{
+    if(!newArr.includes(data)){
+        newArr.push(data)
+    }
+})
+console.log(newArr)
+
+8)sort?
+let arr = [8,7,6,5];
+let swap;
+for(let i=0;i<arr.length; i++){
+    for(let j=i;j<arr.length; j++){
+        if(arr[i]>arr[j]){
+            swap=arr[i];
+            arr[i]=arr[j];
+            arr[j]=swap
+        }
+    }
+}
+console.log(arr)
+
+9)reverse?
+function reverse(arr){
+    newArr=[];
+    for(let i=0;i<arr.length;i++){
+        newArr.push(arr[arr.length-1-i])
+    }
+    console.log(newArr)
+}
+reverse([1,2,3])
+
+10)find second highest value?
+
+function second(arr){
+    let first=-1;
+    let second=-1
+    let third=-1
+    for(let i=0; i<arr.length;i++){
+        if(arr[i]>first){
+            third=second;
+            second=first
+            first=arr[i]
+            // console.log("first",first)
+        }else if(arr[i]>second && arr[i]!=first){
+            second=arr[i]
+            
+        }else if(arr[i]>third && arr[i]!=second){
+            third=arr[i]
+        }
+        
+    }
+    console.log("fir",first)
+    console.log("sec",second)
+    console.log("third",third)
+}
+second([1,2,3,4,5])
+

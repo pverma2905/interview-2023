@@ -1,0 +1,58 @@
+1)sharding? vs Repilca?
+sharding->Sharding is a method for allocating data across multiple machines
+
+replica->Replication is the method of duplication of data across multiple servers
+
+2)Does MongoDB support ACID transaction management and locking functionalities?
+No. MongoDB does not support default multi-document ACID transactions. However, MongoDB provides atomic operation on a single document.
+
+3)How can you achieve primary key - foreign key relationships in MongoDB?
+By default MongoDB does not support such primary key - foreign key relationships. However, we can achieve this concept by embedding one document inside another. Foe e.g. an address document can be embedded inside customer document.
+
+4)Does MongoDB need a lot of RAM?
+No. MongoDB can be run even on a small amount of RAM. MongoDB dynamically allocates and de-allocates RAM based on the requirements of other processes.
+
+5)Mention what is Objecld composed of?
+Objectld is composed of
+
+Timestamp
+Client machine ID
+Client process ID
+3 byte incremented counter
+
+6) Explain what is GridFS in MongoDB?
+For storing and retrieving large files such as images, video files and audio files GridFS is used. By default, it uses two files fs.files and fs.chunks to store the file’s metadata and the chunks.
+
+7) What is the syntax to create a collection and to drop a collection in MongoDB?
+Syntax to create collection in MongoDB is db.createCollection(name,options)
+Syntax to drop collection in MongoDB is db.collection.drop()
+
+8) What is “Namespace” in MongoDB?
+ The concatenation of the collection name and database name is called a namespace.
+
+9) Explain what is MongoDB?
+Mongo-DB is a document database which provides high performance, high availability and easy scalability.
+
+10)aggregation function?
+
+11)limitation of mongodb?
+
+12)mongodb engine ? what is default engine?
+
+13)which engine is used and when?
+
+14)mongodb backup command?
+
+15)which command is used to restore?
+
+16)mongodb projection?
+
+17)which command is used to drop database?
+
+18)what is role of profiler?
+
+20)indexes in mongodb?
+
+
+
+

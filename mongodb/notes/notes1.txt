@@ -1,0 +1,458 @@
+Engineering Digest
+
+1)what is mongodb?
+it is a database server. where we create database
+It can store huge amount of data
+it has collection and document
+it store in json format
+it is schema less
+less relation 
+data is stored together
+
+2)what is mysql?
+ it has a table structured
+ it has table and rows
+ it has schema
+
+ 2)import mongodb?
+ 3)export mongodb?
+ 
+
+ 3)aggregation in mongodb?
+
+ Accumlators:-
+ $sum
+ $avg
+ $max
+ $min
+ $push
+ $addToSet
+ $first
+ $last
+
+ Stages:-
+ $match
+ $project
+ $group
+ $sort
+ $skip
+ $limit
+ $unwind
+ $out
+ 
+ 4) get all db?
+ show dbs
+
+ 5)clear screen ?
+ ctrl + l
+
+ 6)create database>
+ use latest_db
+
+ 7)insert record in database?
+ db.students.insertOne({'name':'ram', 'age':12}) 
+
+ 8)show all document from collection?
+db.students.find();
+
+9)level of nesting is?
+100
+
+10)size of document?
+16mb
+
+11)findOne?
+db.students.findOne({name:'ram'});
+
+12)find?
+db.students.find();
+
+13)updateOne?
+db.students.updateOne({name:'ram'},{$set:{idCard:{'hasPanCard':false,'hasAdhaarCard':true}}})
+
+14)updateMany?
+db.students.updateMany({},{$set:{hobbies:['Cooking','Anime']}})
+
+15)find for object?
+db.students.find({'idCards.hasPanCard':false});
+
+16)find for array?
+db.students.find({hobbies:'Cooking'}).count()
+
+17)CRUD operation?
+insertOne(data, options)
+insertMany(data, options)
+find(filter, options)
+findOne(filter, options)
+updateOne(filter, data, options)
+updateMany(filter, data, options)
+replaceOne(filter, data, options)
+deleteOne(filter, options)
+deleteMany(filter, options)
+
+18)difference b/w find and findOne?
+find ->
+1)it return cursor where we apply method
+2)it return a array of element
+3)it return cursor of no element in find
+
+findOne->
+1)it does not return cursor so we not apply methods
+2)it return object
+3)if no element is find it return null
+
+19)less than, greater than , less than equal to, greater than equal to?
+db.students.find({age:{$lt:15}})
+db.students.find({age:{$lte:15}})
+db.students.find({age:{$gt:15}}).limit(2)
+db.students.find({age:{$gte:15}}).count()
+
+20)find all element more then 20?
+db.students.find().toArray();
+db.students.find().forEach(x=>printjson(x));
+
+
+21)find all tables?
+show collections
+
+22)how many ways to insert document?
+1)db.students.insert({name:'ram', age:12});
+2)db.students.insertOne({name:'ramesh',age:13});
+3)db.students.insertMany([{name:'test1',age:14},{name:'test2', age:15},{name:'test3',age:16}]);
+
+23)how many way to update?
+1)updateOne->
+db.students.updateOne({name:'shalaj'},{$set:{age:15}});
+2)updateMany->
+db.students.updateMany({age:{$gt:14}},{$set:{isEligible:false}});
+
+24)how many ways to delete?
+1)deleteOne->
+db.students.deleteOne({age:14})
+2)deleteMany->
+db.students.deleteMany({age:{$gt:12}});
+
+25)delete all records?
+db.students.deleteMany({});
+
+26)projection?
+find specific field
+db.students.find({},{name:1, _id:0});
+
+27)is mongodb is schema less?
+yes , but some level of schema u maintained
+
+28)datatype in mongodb?
+Text
+Boolean
+Number
+(i)Integer
+(ii)NumberLong
+(iii)NumberDecimal
+ObjectId
+ISODate
+Timestamp
+Array
+Embedded Document
+
+ex)
+db.companyData.insertOne({
+    name:'pranav', isFunding:true,
+    funding:223636737837838378376,
+    employees:[{name:'vipul',age:30}, {name:'amit', age:40}],
+    foundedOn:new Date(), foundedOnTimestamp:new Timestamp()
+    });
+
+29)remove database?
+db.dropDatabase();
+
+30)remove collection?
+db.products.drop()
+
+31)ordered option for insertMany?
+added synchronous
+ db.products.insertMany([{_id:'A',name:'A',price:1},{_id:'B',name:'B',price:2},{_id:'D',name:'D',price:3}]);
+ db.products.insertMany([{_id:'D',name:'D',price:4},{_id:'E',name:'E',price:5},{_id:'F',name:'F',price:6}],{ordered:false});
+
+ 32)Create Collection?
+ db.createCollection("nonfiction");
+
+ 33)validation in mongodb?
+ db.createCollection("nonfiction", {
+    validator:{
+        $jsonSchema:{
+            required:['name','price'],
+            properties:{
+                name:{
+                    bsonType:'string',
+                    description:'must be a string and required'
+                },
+                price:{
+                    bsonType:'number',
+                    description:'must be an number and required'
+                }
+            }
+        }
+    },
+    validationAction:'error'
+ })
+
+ 34)update mongodb validation?
+db.runCommand({
+    collMod:'nonfiction',
+     validator:{
+        $jsonSchema:{
+            required:['name','price','authors'],
+            properties:{
+                name:{
+                    bsonType:'string',
+                    description:'must be a string and required'
+                },
+                price:{
+                    bsonType:'number',
+                    description:'must be an number and required'
+                },
+                authors:{
+                    bsonType:'array',
+                    description:'description must be an array and is required',
+                    items:{
+                        bsonType:'object',
+                        required:['name','email'],
+                        properties:{
+                            name:{
+                                bsonType:'string'
+                            },
+                            email:{
+                                bsonType:'string'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+     validationAction:'error'
+})
+
+35) write concern option in insertMany?
+db.books.insertOne({name:'B',price:2},{writeConcern:{w:1,j:true,wtimeout:1000}});
+
+36)Atomicity?
+it is achieved at document level
+when we insert, update and delete multiple record and mongodb server getting error 
+ex)if 10 document is insert and 5sis saved in database out of 10.so vo rollback nahi honge.
+
+37) import json in database?
+first download database tools
+mongoimport "C:\Users\user\Downloads\students.json" -d college -c students --jsonArray --drop
+
+38)comparison operator?
+1=>$eq   //  db.students.find({age:{$eq:12}});
+2=>$lt   //  db.students.find({age:{$lt:12}});
+3=>$lte  //  db.students.find({age:{$lte:12}});
+4=>$in   //  db.students.find({age:{$in:[5,12,14]}});
+5=>$ne   //  db.students.find({age:{$ne:12}});
+6=>$gt   //  db.students.find({age:{$gt:12}});
+7=>$gte  //  db.students.find({age:{$gte:12}});
+8=>$nin  //  db.students.find({age:{$nin:[5,12,14]}});
+
+39)serach for object?
+db.students.find({'identity.hasAdhaarCard':true})
+
+40)search for array?
+db.students.find({Hobbies:'Walk'})
+
+41)logical operator?
+$and => db.students.find({$and:[{age:{$lte:10}},{Hobbies:'Walk'}]})
+$or => db.students.find({$or:[{age:{$lte:10}},{age:{$gte:15}}]});
+$nor => db.students.find({$nor:[{age:{$lte:10}},{age:{$gte:15}}]});
+$not =>  db.students.find({$and:[{age:{$not:{$lt:11}}},{age:{$not:{$gt:5}}}]})
+
+42)element query operator?
+$exists=> 
+db.students.find({hasMacBook:{$exists:true}})
+db.students.find({hasMacBook:{$exists:true, $eq:true}})
+
+$type=>
+db.students.find({hasMacBook:{$exists:true, $type:8}})
+db.students.find({hasMacBook:{$exists:true, $type:8}})
+
+43)evolution query operator?
+1=> $expr => in this we use comparison and arthmetic operator
+// find records whose spent is greater than budget;
+db.employees.find( { $expr: { $gt: [ "$spent" , "$budget" ] } } )
+2=> $jsonSchema => it used in validation
+3=> $mod => find records whose age is even
+db.students.find({age:{$mod:[2,0]}})
+4=> $regex => //start name with A 
+db.students.find({name:{$regex:/^A/}})
+5=> $text => // global search in bio field 
+ db.students.createIndex({bio:"text"})
+ db.students.find({$text:{$search:"youtube"}})
+6=> $where => old
+
+44) Array Query?
+=>1/// find whose hobbies is cricket? 
+db.students.find({Hobbies:'Cricket'})
+
+=>2 /// find experience in amazon in array of object?
+ db.students.find({'experience.company':'Amazon'})
+
+=>3 /// find how many student work in spotify?
+ db.students.find({'experience.company':'Spotify'}).count()
+ db.students.find({'experience.company':'Spotify'}).size()
+
+=>4 /// how many students who worked in 3 companies?
+ db.students.find({experience:{$size:3}})
+
+=>5 /// how many students whose experience is greater then 3? 
+db.students.find({$and:[{experience:{$exists:true}}, {$expr:{$gte:[{$size:"$experience"},3]}}]})  
+
+=>6 /// how many students whose hobbies are walking and reading?
+ db.students.find({Hobbies:['Walking','Reading']})
+ db.students.find({Hobbies:{$all:['Walking','Reading']}})
+db.students.find({Hobbies:{$in:['Walking','Reading']}})
+
+=>7 /// document that have at least a product with name apple 
+and quantity greater than 15?
+//// find in array /search
+db.products.find({products:{$elemMatch:{quantity:{$gt:11}, name:"apple"}}})
+
+45) sorting?
+=>1////assending for age:-
+db.teacher.find().sort({age:1})
+db.teacher.find().sort({age:1,name:1})
+db.teacher.find().sort({age:1,name:1}).skip(20)
+db.teacher.find().sort({age:1,name:1}).limit(5)
+
+=>2////desending for age:-
+db.teacher.find().sort({age:-1})
+
+46)advanced operator?
+1=>$inc=>increment operator
+// all student age increment by 2
+ db.students.updateMany({},{$inc:{age:2}})
+// all student age decrement by 2
+ db.students.updateMany({},{$inc:{age:-2}}) 
+2=>$min=>from existing to decrease 
+// increase age of sita to 23 if her age lesser than it
+ db.students.updateOne({name:'Sita'},{$min:{age:23}})
+3=>$max=> from existing to increase 
+// increase age of sita to 50 if her age lesser than it
+ db.students.updateOne({name:'Sita'},{$max:{age:50}})
+4=>$mul=> multiply
+// increase age of sita multiply by 2
+db.students.updateOne({name:'Sita'},{$mul:{age:2}})
+5=>$unset=> remove age of sita
+db.students.updateOne({name:'Sita'},{$unset:{age:2}})
+6=>$set => set age of sita
+db.students.updateOne({name:'Sita'},{$set:{age:23}})
+6=>$rename=>
+// rename the age of sita age to studentAge
+db.students.updateOne({name:'Sita'},{$rename:{age:"studentAge"}})
+7=>upsert=> if record found then update otherwise insert that findOne
+// set age of golu to 100
+
+47)Update Array?
+//For All experiences lesser than and equal to 1 add field neglect true? 
+ db.students.find({experience:{$elemMatch:{duration:{$lte:1}}}})
+
+// update for first object match
+db.students.updateMany({experience:{$elemMatch:{duration:{$lte:1}}}}, {$set:{"experience.$.neglect":true}})
+
+// update for all object match?
+db.students.updateMany({experience:{$elemMatch:{duration:{$lte:1}}}}, {$set:{"experience.$[].neglect":1}})
+
+// update for all selected object match?
+db.students.updateMany({experience:{$elemMatch:{duration:{$lte:1}}}}, {$set:{"experience.$[e].neglect":true}},{arrayFilters:[{"e.duration":{duration:{$lte:1}}}]})
+
+
+1=>$push=> add record, duplicate record added
+/// add particular object in experience
+ db.students.updateOne({name:"Ram"},{$push:{experience:{company:"Meta", duration:2}}})
+
+2=>$pull => remove particular record
+db.students.updateOne({name:"Ram"},{$addToSet:{experience:{company:"Meta", duration:2}}})
+3=>$pop=> 
+  /// last record  pop
+ db.students.updateOne({name:"Ram"},{$pop:{experience:1}})
+
+  /// first record pop
+ db.students.updateOne({name:"Ram"},{$pop:{experience:-1}})
+4=>$addToSet=> no duplicate record added
+db.students.updateOne({name:"Ram"},{$addToSet:{experience:{company:"Meta", duration:2}}})
+
+48)indexing in mongodb?
+there are 3 type of indexing in mongodb
+1)single field indexes
+2)compound indexes
+3)Text indexes
+4)multi-key
+5)unique indexes
+6)ttl indexes
+7)hide and unhide indexes
+8)delete index
+9)sparse index
+
+49)single field indexes?
+ db.teachers.find({age:{$lte:30}}).explain("executionStats")
+db.teachers.createIndex({"age":1})
+=>1 for ascending order me
+ db.teachers.find({age:{$lte:30}}).explain("executionStats")
+
+50)create index on age field?
+db.teachers.createIndex({"age":1})
+=>1 for ascending order me
+
+
+51)get indexes ?
+db.teachers.getIndexes();
+
+52)drop index?
+db.teachers.dropIndex("age_1");
+
+53)when not  to use indexing in mongodb?
+1)when collection is small
+2)when collection is frequently updated
+3)when queries are complex for multiple field (multiple field)
+4)when collection is large(make less indices)
+
+52)compound indexes?
+step1: create index:-
+db.teachers.createIndex({"age":1,"gender":1})
+
+step2:
+db.teachers.find({age:{$gte:27},gender:"male"}).explain("executionStats")
+
+53)create index for not duplicate?
+db.teachers.createIndex({name:1}, {unique:true})
+
+54)create index for age grater than 22?
+db.teachers.createIndex({age:1}, {partialFilterExpression:{age:{$gt:22}}})
+
+55)create Index for gender is exists?
+db.teacher.createIndex({name:1},{partialFilterExpression:{gender:{$exists:true}}})
+
+56)create index  work on date field to expire?
+db.teachers.createIndex({"date":1},{expireAfterSeconds:3600})
+
+57)stages?
+1)PROJECTION_COVERED
+2)FETCH
+3)IXSCAN
+4)collection Scan(linear)
+
+58)for multiple indexes?
+mongodb check which index is better stored in cache
+
+59)cache reset?
+1)cache reset after 1000 writes.
+2)index is reset
+3)mongo server is restarted
+4)other index are manipulated
+
+60)allPlansExecution?
+db.teachers.find({name:"Mike"}).explain("allPlansExecution")
+
+61)multi-key-Index?
+A multi-key-index is an index that can be created on an array field. 

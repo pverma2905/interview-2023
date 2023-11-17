@@ -1,0 +1,98 @@
+1)what is node js ?
+It is single threaded  highly scalable language
+It is asynchronous , event-driven, non-blocking , io model
+it is made on google v8 engine
+It is developed by ryan dhal
+It is javascript server side language
+it is a run time javascript web application frame work
+
+2)what is npm?
+by the help of npm we run ,build, test commands
+
+3)what are the modules?
+modules are the package utilities for building an application
+
+4)availabe modules in node js?
+assert
+child_process
+cluster
+crypto
+fs
+http
+path
+async
+zlip
+
+5)is node js is single threaded? if yes why?
+yes node js is single threaded.
+it work on non blocking event loop callback
+
+when request come to event queue execute it asynchronously  when an event is completed another event passed as callback is then executed 
+
+6)module.exports?
+if we create own module and want to access all the pages to export this we used module.export
+
+7)events in node js? 
+events are the action we  can handle the callback asynchronously
+Object in node js also emit an event which are instance of event.eventEmitter
+
+
+8)global object in node  js??
+__direname // absolute  path
+__filename // absolute path of file name
+setTimeout(()=>{
+
+},1000)
+var time=1
+let timer =setInteval(()=>{
+    time++
+if(time>=5){
+    clearInterval(timer);
+}
+},1000)
+
+require()
+
+9)  fs module?
+fs.writeFileSync()
+fs.writeFile()
+
+fs.readFileSync()
+fs.readFile()
+
+fs.unlinkSync()
+fs.unlink()
+
+fs.mkdirSync()
+fs.mkdir()
+
+fs.rmdirSync()
+fs.rmdir()
+
+fs.readdirSync()
+fs.readdir()
+
+fs.renameSync()
+fs.rename()
+
+10) working in node js?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+1)what is ec2 instance ?
+elastic cloud compute
+request to aws provide a virtual server.
+collection of ram, disk, cpu
+
+2)why we need ec2 instance?
+Ec2 provide virtual server
+In virtual server face, maintenance cost, security, upgrade , maintain temperature to 
+overcome of this cost we use virtualization of server.
+
+3)types of ec2 instance?
+general purpose ec2 instance:-
+compute optimized ec2 instance:-
+memory optimized ec2 instance:-
+storage optimized ec2 instance:-
+accelerated compute:-
+
+5)why is very popular?
+
+
+
+
+4)what is region and availability zone?
+for security, latency, instance create in appropriate region
+In aws have several region
+have no of availability zone 
+aws have data center across the world
+
+
+
+5)how to create ec2 instance?
+select ec2->launch instance->name of instance->add key pair-> launch instance
+
+putty,mobaxterm use in windows 
+
+
+
+6)how to connect the created ec2 instance?
+we connect to ec2 instance by using key pair. 
+it is a combination of public private key.
+public key provide aws , private key u have  
+
+7)how to use this application and access this from outside world?
+by using public ip access this instance ec2 instance to outside world
+
+downloads pem location=>ssh -i aws_login.pem ubuntu@publicIP
+whoami
+sudo su
+clean
+sudo apt-update -- ubuntu user
+apt-update -- root user
+
+8)how to deploy an application to ec2 instance? 
+##=>first install java:-
+sudo apt install openjdk-11-jdk
+##->install jenkins ->go to google=>weekly release (jenkins run on port 8080)
+##paste it
+weekly release
+systemctl jenkins status
+systemctl status jenkins
+
+//go to ec2 instance selected=> security tab => inbound rule
+=> click on security group => inbound rule=> edit 
+=> add rule => custom tcp  => port 8080 => anywhere ipv4 =>save rule
+
+http://publicIp Address:8080=>ouput
+
+cat ouput=> got password paste
+
+9)private IP?
+private ip-> very specific for aws network in subnet, internal aws networking
+
+

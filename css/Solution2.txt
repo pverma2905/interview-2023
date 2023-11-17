@@ -1,0 +1,10 @@
+1)box model?
+2)text-shadow?
+3)box-shadow?
+4)object -fit?
+5)Css sprite? And benefit?
+6)What is the use of preconnect in css?
+7)What is css selectors and css rules?
+8)What are mixin ? And js in css helpful?
+9)What are rem and em properties in css??
+10)What are the different ways make webpage responsive?

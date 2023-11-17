@@ -1,0 +1,11 @@
+1)auto - This is default. The browser calculates the height and width
+2)length - Defines the height/width in px, cm, etc.
+3)% - Defines the height/width in percent of the containing block
+4)initial - Sets the height/width to its default value
+5)inherit - The height/width will be inherited from its parent value
+6)Note: Remember that the height and width properties do not include padding, borders, 
+or margins! They set the height/width of the area inside the padding, border, and margin
+of the element!
+7)max-width used when remove scroll bar
+8)in same element u used width, max-width. so it take max-width 
+

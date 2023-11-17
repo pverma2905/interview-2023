@@ -1,0 +1,9 @@
+// technical thapa
+
+In Every browser hava own engine like 
+chrome-v8 engine
+mozilla-spidermonkey
+IE-chakra
+
+
+Javascript engine parsed the data means check code line by line If getting error stop execution and throw error. else code is correct  it produce a data structure (Abstract Syntax tree) then help of ast convert to machine code and code run  

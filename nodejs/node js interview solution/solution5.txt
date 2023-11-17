@@ -1,0 +1,61 @@
+41)url module?
+Url module is one of the core modules that comes with node.js, which is used to parse the URL and its other properties. 
+ 
+By using URL module, it provides us with so many properties to work with.
+ 
+These all are listed below:
+ 
+url.hash
+url.host
+url.hostname
+url.href
+url.origin
+url.password
+url.pathname
+url.path
+url.port
+url.auth
+url.protocol
+url.search
+
+42)what is piping in node js?
+piping is to connect output of one stream to another stream
+
+43)what is test pyramid in node js? 
+In Node.js, a test pyramid is a figure which explains the proportion of unit tests, integrations tests, and end-to-end tests are required for the fruitful development of a project. The components of a test pyramid are given below:
+ 
+Unit Tests : They test the individual units of code in isolation. They are fast and you might perform a lot of these tests
+
+Integrations Tests : They test the integration among dissimilar units.
+
+End-to-End (E2E) Tests : They test the system as a whole, right from the User Interface to the data store, and back.
+
+44) what is NODE_ENV?
+it is an environment variable that stand for node  environment  in express
+
+export NODE_ENV=production
+
+45) What is a thread pool in Node.js? Which library handles it?
+In Node.js, the libuv library is used to handle the Thread pool. The libuv library is a multi-platform C library that supports asynchronous I/O-based operations such as file systems, networking, and concurrency.
+
+46)How can you enhance the Node.js performance through clustering?
+ The cluster mode is used to start up multiple node.js processes, thereby having multiple instances of the event loop. When we start using clusters in a Node.js app, it creates multiple node.js processes. But there is also a parent process called the cluster manager, which is responsible for monitoring the health of the individual instances of the application.
+
+47) What is the difference between readFile and createReadStream in Node.js?
+readFile() process is a fully buffered process that returns the response only when the complete file is pushed into the buffer and is read. This process is called a memory-intensive process, and in the case of large files, the processing can be very slow.
+
+createReadStream() is a partially buffered process that treats the entire process as an event series. The entire file is split into chunks and then processed and sent back as a response one by one. After completing this step, they are finally removed from the buffer. Unlike the readFile process, the createReadStream process is effective for the processing of large files.
+
+48) What does Node.js TTY module contains?
+The Node.js TTY module contains tty.ReadStream and tty.WriteStream classes. In most cases, there is no need to use this module directly. You have to used require ('tty') to access this module.
+
+49)What's the difference between dependencies, devDependencies and peerDependencies in npm package.json file?
+dependencies - need for production 
+
+devDependencies - need for development
+
+peerDependencies - 
+
+50)What tools can be used to assure a consistent style in Node.js?
+JSLint
+ESLint

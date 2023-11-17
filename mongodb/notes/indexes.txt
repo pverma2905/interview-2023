@@ -1,0 +1,89 @@
+/// graphicoder
+
+1)what is indexes?
+speed up find query
+by default it uses collection scan (linear);
+by default index are in _id field.
+
+After apply indexing it follow index scan.
+
+2)how indexing work?
+Indexing sort the record there it follow binary searching.
+before: collScan
+after: IXSCAN,Fetch
+db.collection.createIndex({"age":1});
+db.newCollection.find({age:{$gt:21}}).explain("executionStats");
+
+3)create index?
+db.collection.createIndex({"name":1});
+
+3)get indexes?
+db.newCollection.getIndexes();
+
+4) drop indexes?
+ db.newCollection.dropIndex("age_1");
+
+5)type of indexes?
+1=>uniqueIndex();
+2=>TTL Index()
+3=>Hide and Unhide indexes()
+4=>Delete index()
+5=>sparse index()
+6=>partial index()
+7=>compound index()
+8=>multi-key index()
+9=>Text index()
+
+6)unique index?
+db.newCollection.createIndex({"name":1},{unique:true});
+
+7)TTL index?
+in compound indexes ttl not used
+in _id field ttl not used
+in cap collection ttl not used
+db.ttlExample.insertOne({createdAt:new Date()})
+db.ttlExample.find()
+db.ttlExample.createIndex({createdAt:1},{expireAfterSeconds:30})
+db.ttlExample.find()
+
+8)in ttl index update expire time?
+db.runCommand({"collMod":"ttlExample","index":{"keyPattern":{"createdAt":1},expireAfterSeconds:60}})
+db.ttlExample.getIndexes()
+
+9)disabled ttl command?
+db.adminCommand({setParameter:1, ttlMonitorEnabled:false});
+
+10) enable ttl command?
+db.adminCommand({setParameter:1, ttlMonitorEnabled:true});
+
+11)Hide And Unhide indexes?
+db.newCollection.createIndex({name:1},{hidden:true})
+db.newCollection.hideIndex("name_1");
+db.newCollection.getIndexes()
+After hide duplicate index is not added
+db.newCollection.unhideIndex("name_1");
+
+12)sparse index?
+this index is used when name is present in document only when this object index is created other not created in this object.
+db.newCollection.createIndex({name:1},{sparse:true})
+
+13) when we doing sorting in sparse index?
+=>all record are come.
+db.newCollection.find().sort();
+=>to overcome this
+db.newCollection.find({age:-1}).sort({age:1});
+
+14)Partial index?
+db.newCollection.createIndex({age:1},{unique:true, partialFilterExpression:{age:{$gt:20}}})
+db.newCollection.createIndex({age:1},{unique:true,partialFilterExpression:{age:{$gt:20}}}).explain("executionStats")
+
+15)compound indexes?
+in this multiple indexes is used
+db.newCollection.createIndex({name:1,age:1});
+
+16)multi index?
+
+
+17)text indexes?
+db.newCollection.createIndex({name:"text"})
+

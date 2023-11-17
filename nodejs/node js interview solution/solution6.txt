@@ -1,0 +1,123 @@
+51) Is it possible to access DOM in Node?
+No, it is not possible to access DOM in Node.
+
+52) How can you avoid callbacks?
+To avoid callbacks, you can use any one of the following options:
+
+You can use modularization. It breaks callbacks into independent functions.
+You can use promises.
+You can use yield with Generators and Promises.
+
+53)How node js work?
+According to the above diagram, the clients send requests to the web server to interact with the web application. These requests can be non-blocking or blocking and used for querying the data, deleting data, or updating the data.
+
+js receives the incoming requests and adds those to the Event Queue.
+
+After this step, the requests are passed one by one through the Event Loop. It checks if the requests are simple enough not to require any external resources.
+
+The event loop then processes the simple requests (non-blocking operations), such as I/O Polling, and returns the responses to the corresponding clients.
+
+A single thread from the Thread Pool is assigned to a single complex request. This thread is responsible for completing a particular blocking request by accessing external resources, such as computation, database, file system, etc.
+
+Once the task is completed, the response is sent to the Event Loop that sends that response back to the client.
+
+54)first class function in JavaScript?
+assign a function to variable
+passed an argument an return a function
+
+ex)function printName(a,b){
+    return function(){
+        return a+" "+b;
+    } 
+}
+let res= printName("pranav", "verma")
+console.log(res())
+
+55) What are buffers in Node.js?
+In general, a buffer is a temporary memory mainly used by the stream to hold on to some data until it is consumed. Buffers are used to represent a fixed-size chunk of memory allocated outside of the V8 JavaScript engine. It can't be resized. It is like an array of integers, which each represents a byte of data. It is implemented by the Node. js Buffer class. Buffers also support legacy encodings like ASCII, utf-8, etc.
+
+56)where u store audio and video?
+s3
+
+57)create http server?
+var http = require('http'); // Import Node.js core module
+
+var server = http.createServer(function (req, res) {   //create web server
+    if (req.url == '/') { //check the URL of the current request
+        
+        // set response header
+        res.writeHead(200, { 'Content-Type': 'text/html' }); 
+        
+        // set response content    
+        res.write('<html><body><p>This is home Page.</p></body></html>');
+        res.end();
+    
+    }
+    else if (req.url == "/student") {
+        
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.write('<html><body><p>This is student Page.</p></body></html>');
+        res.end();
+    
+    }
+    else if (req.url == "/admin") {
+        
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.write('<html><body><p>This is admin Page.</p></body></html>');
+        res.end();
+    
+    }
+    else
+        res.end('Invalid Request!');
+
+});
+
+server.listen(5000); //6 - listen for any incoming requests
+
+console.log('Node.js web server at port 5000 is running..')
+
+58)Why is assert used in Node.js ?
+Assert is used to explicitly write test cases to verify the working of a piece of code. The following code snippet denotes the usage of assert:
+var assert = require('assert');
+function add(x, y) {
+return x + y;
+}
+var result = add(3,5);
+assert( result === 8, 'three summed with five is eight');
+
+59)write a function of routes for middleaware?
+route("/login",[authMiddleware,secondMiddleware],loginController); 
+
+60)jwt code?
+
+61)jwt method for encrypttion?
+jwt.sign({
+  data: 'foobar'
+}, 'secret', { expiresIn: 60 * 60 });
+
+jwt.verify(token, 'shhhhh', function(err, decoded) {
+  console.log(decoded.foo) // bar
+});
+
+62)bcrypt methods?
+bcrypt.genSalt(saltRounds, function(err, salt) {
+    bcrypt.hash(myPlaintextPassword, salt, function(err, hash) {
+        // Store hash in your password DB.
+    });
+});
+
+bcrypt.compare(myPlaintextPassword, hash, function(err, result) {
+    // result == true
+});
+
+63)which engine used in node js?
+v8 engine
+
+64) mvvm architecture?
+MVVM architecture (Model-View-ViewModel)
+
+65)which template engine used in node js?
+ejs
+
+66)
+

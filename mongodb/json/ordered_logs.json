@@ -1,0 +1,10 @@
+[
+    {"product":"iphone", "price":100000, "userId":101,"success":false},
+    {"product":"rice", "price":100, "userId":102,"success":true},
+    {"product":"watch", "price":1000, "userId":103,"success":true},
+    {"product":"shirt", "price":500, "userId":104,"success":true},
+    {"product":"laptop", "price":80000, "userId":105,"success":true}
+]
+
+
+

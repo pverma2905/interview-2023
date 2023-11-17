@@ -1,0 +1,103 @@
+1)auto scaling group?
+automatically increase the machine on load basis
+
+2)load balancer?
+ balance the load 50:50,60:40 ratio
+
+3)elastic ip ?
+elastic ip address is the static ip address in ec2 .if anyone want same ip address every time
+
+4) bastion and jump host?
+it is mediator b/w private ip and public ip to communicate
+
+
+Step to create public private subnet:-
+1)create vpc
+=>give name= aws-prod-example
+=> nat gateway = i per availability zone
+=> vpc end point none
+=> create vpc
+
+2)in ec2 go autoscaling group:-
+(i)
+=>create autoscaling group
+=>create a launch template
+=>name of launch template:- aws-prod-example
+=>template version description:- proof of concept for app deploy in aws private subnet
+=>image:- recently launched
+=> instance type: free instance
+=> select key value pair
+=>in network setting =>create new security group: aws-prod-example
+                     => description: allow ssh access
+                     => select vpc which is created
+=> inbound security group=> ssh -anywhere
+                         => custom tcp =>8000=> anywhere
+=> create launch template
+
+(ii) fill auto scaling group:-
+=> give name => aws-prod-example
+=> choose launch template
+=> next
+=> choose vpc
+=> choose private subnet
+=> next
+=> next
+=> desired capacity:2 , minimum:1, maximum:4
+=> next
+=> next
+=> next
+=> create autoscaling group
+
+
+3)my two instance is created by using above step in private subnet.
+
+4)to communicate private and public subnet we create a bastion host instance
+=>create instance
+=> name= bastion-host
+=> ubuntu image
+=> network setting=>allow ssh traffic=>edit select vpc=>auto assign public ip enable
+=> launch instance
+
+5)copy the local pem file to aws instance
+scp -i path of pem file path of pem file ubuntu@publicIP:/home/ubuntu
+scp -i /home/pranav/Downloads/linux-key.pem /home/pranav/Downloads/linux-key.pem ubuntu@34.229.225.0:/home/ubuntu
+
+
+ssh -i linux-key.pem ubuntu@34.229.225.0
+
+6)login in private ip
+ssh -i linux-key.pem ubuntu@privateIP
+
+
+7)install python application
+vim index.html
+python3 -m http.server 8000
+
+8)create target group
+=> target group name: aws-prod-example
+=> port :8000
+=> choose vpc
+=> next
+=> select instance
+=> include as pending below
+=> create target group
+
+8)choose load balancer
+=>choose=> application load balancer => create
+=>name= aws-prod-example
+=> select internet facing
+=>select vpc
+=> select both availability zone in public subnet
+=> choose security group: aws-prod-example
+=> in Lister and Routing=> choose target group
+=> create load balancer
+
+
+9)open load balancer"
+=>on port 80 
+=> select security
+=>select sg
+=>edit in inbound => add rule=> http=> anywhere =>save rule
+=>wait 
+=> copy dns name paste in new tab
+ 

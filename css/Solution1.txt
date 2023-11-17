@@ -1,0 +1,73 @@
+1)Feature of scss?
+https://www.javatpoint.com/sass-interview-questions-and-answers
+SASS means Syntactically Awesome Style sheets. It is a CSS preprocessor which is used to reduce repetition with CSS and save time. it facilitates you to add variables, nested rules, mixins, inline imports, inheritance and more, all with fully CSS-compatible syntax.
+2)Css preprocessor?
+
+ a program generate CSS from the preprocessor's own unique syntax. There are many CSS preprocessors to choose from, however most CSS preprocessors will add some features that don't exist in pure CSS, such as mixin, nesting selector, inheritance selector, and so on. These features make the CSS structure more readable and easier to maintain.
+
+Here are a few of the most popular CSS preprocessors:
+
+SASS (SCSS)
+LESS
+Stylus
+PostCSS
+
+3)One div is center of page using css and flexbox?
+display:flexbox
+align-items:center
+justify-content:center
+
+4)What is specificity?
+a process of determining which css rule will be applied to an element. it actually determines which rules will take precedence.
+
+inline style usually wins then ID then class value (or pseudo-class or attribute selector), universal selector (*) has no specificity.
+
+5)Flex vs grid?
+flexbox was designed for layout in one dimension - either a row or a column.
+Grid was designed for two-dimensional layout - rows, and columns at the same time
+
+6)what is portrait and landscape?
+Landscape orientation is horizontal,
+while portrait orientation is vertical.
+
+7)what is pseudo classes and pseudo element ?
+pseudo classes:-
+article:first-child
+article:last-child
+
+pseudo element:-
+::first-line, ::first-letter, ::before, ::after
+
+8)media queries?
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .example {background: red;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .example {background: green;}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .example {background: blue;}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .example {background: orange;}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .example {background: pink;}
+}
+
+
+9)position?
+
+
+
+

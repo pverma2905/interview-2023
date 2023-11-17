@@ -1,0 +1,22 @@
+1)what is cloud?
+in previous every organization has data center
+1)overcome of wastage of server, using virtual server than physical server
+2)no need to maintenance.
+3)on demand we can increase and decrease demand.
+
+2)public and private cloud?
+1)private cloud:- this private server with in the organization
+2)public:- Anyone who have an account of cloud providers on demand they will provide
+
+3)why public cloud is so popular?
+because get  rid of maintenance of server
+it is popular for start up , mid level companies,
+ensure about hacker, power,temperature
+it provide no.of service, easily upgrade and downgrade.
+
+4)How aws is better than other?
+1)it is first one who recognize the problem.so it take the advantage.
+2)more jobs are in aws. and more companies using aws
+
+5)is the right time to move to cloud?
+

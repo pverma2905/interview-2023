@@ -1,0 +1,29 @@
+https://github.com/sudheerj/ECMAScript-features#Enhanced-object-literals
+1)let
+2)const
+3)for of
+4)template literals
+5)default value for function parameter
+6)arrow function
+7)classes
+8)modules
+9)spread
+10)rest
+11)destructuring
+12)promises
+13)Array.find
+14)Array.findIndex
+15)Maps/weakMap
+16)set/wekSet
+17)iterators
+18)generator 
+19)symbol type
+20)Object.assign({},obj1,obj2)
+21)string function
+1=>string.repeat()
+2=>string.startWith()
+2=>string.endsWith()
+2=>string.includes()
+22)proxies
+23)Reflect
+

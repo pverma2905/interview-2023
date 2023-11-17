@@ -1,0 +1,21 @@
+https://www.analyticsvidhya.com/blog/2020/07/difference-between-sql-keys-primary-key-super-key-candidate-key-foreign-key/#:~:text=A%20candidate%20key%20is%20a,ambiguous%20records%20in%20a%20table.
+
+https://www.javatpoint.com/dbms-keys
+
+
+1)what is candidate key?
+uniquely indentified each row in table collection of those key called candidate key.
+
+
+2)what is primary key?
+
+3)what is foreign key?
+
+4)alternate key?
+Alternate keys are those candidate keys which are not the Primary key.
+
+5)super key?
+
+6)composite key?
+
+7)unique key?

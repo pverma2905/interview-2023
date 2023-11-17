@@ -1,0 +1,16 @@
+1)promise to async await
+2)promise chaining?
+
+3)map in rxjs?
+4)sharding vs replica?
+5)aggregation?
+6)middleware?
+7)why async and await is better  then promise? 
+8)temporal dead zone?
+let and const is calling before we define is called temporal deadzone
+9)prototype ?
+after creating object add new properties 
+inherit the property of another object
+student.prototype.age=20; 
+
+

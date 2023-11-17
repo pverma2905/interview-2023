@@ -1,0 +1,14 @@
+data type: 
+Primitive data type:-
+1)number 
+2)string
+3)boolean
+4)undefined
+5)null
+6)symbol
+
+else other then above is object 
+
+console.log(typeof(null))=> object
+console.log(typeof([]))=>  object
+console.log(typeof(function {}))

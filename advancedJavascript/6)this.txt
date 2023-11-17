@@ -1,0 +1,4 @@
+1)alone this refer to global object
+2)in regular function this refer to global object
+3)in object a method this refer to object
+4)in strict  mode  this is undefined 

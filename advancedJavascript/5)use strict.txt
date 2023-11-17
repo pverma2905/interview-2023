@@ -1,0 +1,5 @@
+"use strict"->It execute code in strict mode
+it's come in ecmascript 5 
+catches the more error
+
+type error /refrenced  error

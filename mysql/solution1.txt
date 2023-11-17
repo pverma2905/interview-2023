@@ -1,0 +1,92 @@
+1. What is SQL Server?
+
+2. Compare MySQL vs SQL Server.
+
+3. How and why use SQL Server?
+
+4. What are the features of MySQL?
+
+5. What are the advantages and disadvantages of using MySQL?
+
+6. What is the Traditional Network Library for a system?
+
+7. What is the default port for MySQL Server?
+
+
+8. What do DDL, DML, and DCL stand for?
+
+9. What is a join in MySQL?
+
+10. What are the common MySQL functions?
+
+11. What is the difference between CHAR and VARCHAR?
+
+12. What are Heap Tables?
+
+
+13. What is the syntax for concatenating tables in MySQL?
+
+14. What is the limit of indexed columns that can be created for a table?
+
+15. What are the different types of strings used in database columns in MySQL?
+
+
+16. How can a user get the current SQL version?
+
+17. What is the difference between primary key and unique key?
+
+18. Is there an object-oriented version of MySQL library functions?
+
+
+19. What is the storage engine used for MySQL?
+
+
+20. What is the difference between the primary key and the candidate key?
+
+21. What are the different types of tables in MySQL?
+
+22. What are the differences between a primary key and a foreign key?
+
+23. What is the use of ENUM in MySQL?
+
+24. What are the TRIGGERS that can be used in MySQL tables?
+
+25. What is the difference between LIKE and REGEXP operators in MySQL?
+
+26. How to use the MySQL slow query log?
+
+27. How can you change the root password if it is lost?
+
+28. How to resolve the problem of the data disk that is full?
+
+
+29. What is the difference between the DELETE TABLE and TRUNCATE TABLE commands in MySQL?
+
+30. What are the types of joins in MySQL?
+
+
+31. What are the storage models of OLAP?
+
+32. How to define the testing of network layers in MySQL?
+
+
+33. How can one take an incremental backup in MySQL?
+
+
+34. What is meant by transaction? What are ACID properties?
+
+35. How can one restart SQL Server in the single user or the minimal configuration modes?
+
+
+36. What is the difference between BLOB and TEXT?
+
+37. Can you use MySQL with Linux operating system?
+
+
+38. What is the TIMESTAMP data type?
+
+39. What is the function of mysqldump?
+
+40. What is an access control list?
+
+41. What is the main difference between MySQL and PostgreSQL?

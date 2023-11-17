@@ -1,0 +1,160 @@
+21)fabinocci?
+function fibonocii(n){
+let n1=0,n2=1;
+let next;
+for(let i=1; i<=n; i++){
+    console.log(n1)
+    next=n1+n2;
+    n1=n2;
+    n2=next;
+}
+}
+fibonocii(5);
+
+22) fabinocci range?
+//fibonocii up to n terms
+function fibo(n){
+ let n1=0,n2=1;
+ let next;
+ console.log(n1)
+ console.log(n2)
+
+next=n1+n2;
+ while(next<=n){
+    console.log(next)
+    
+    n1=n2;
+    n2=next;
+    next=n1+n2;
+ }   
+}
+
+fibo(5)
+
+23) factorial?
+function FindFactorial(n){
+fact=1;
+if(n>1){
+    for(let i=1; i<=n; i++){
+        fact*=i
+    }
+    console.log(`factorial of ${n} is:`,fact)
+}else{
+    console.log("not exist")
+}
+} 
+
+FindFactorial(5)
+
+24)check prime?
+function isCheckPrime(number){
+let isPrime=false;
+if(number==1){
+ isPrime=false;
+}
+
+else if(number>1){
+    for(let i=2;i<number; i++){
+        if(number%i==0){
+            isPrime=false;
+            break;
+        }else{
+            isPrime=true;
+            break;
+        }
+    }
+    if(isPrime){
+       console.log(`${number} is prime number`)
+    }else{
+       console.log(`${number} is not prime number`);
+    }
+}
+}
+
+isCheckPrime(12);
+
+25)prime no range?
+function isCheckPrime(b,a){
+    isPrime=false;
+    for(let i=a; i<=b;i++){
+       let flag=0;
+        for(let j=2;j<i;j++){
+          if(i%j==0){
+            flag=1;
+            break;
+          }
+        }
+
+        if(i>1 && flag==0){
+            console.log(i)
+        }
+    }
+
+
+}
+
+isCheckPrime(10,1)
+
+26)generate random no?
+function generateRandomNo(max,min){
+    let a=parseInt(max);
+    let b=parseInt(min);
+  console.log(Math.floor(Math.random()*(a-b+1))+b)
+
+}
+generateRandomNo(10,1)
+
+27)Recursion of fabinocii ?
+function fibonacci(n){
+    if(n<2){
+        return n;
+    }else{
+        return fibonacci(n-1)+fibonacci(n-2) 
+    }
+}
+
+let num = prompt("Enter a number: ");
+
+    if(num<=0){
+        console.log("Enter a positive number");
+    }
+else{
+for(let i=0; i<num; i++){
+    console.log(fibonacci(i))
+}  
+}
+
+28)Recursion factorial?
+function factorial(n){
+    if(n==0){
+        return 1;
+    }else{
+        return n*factorial(n-1)
+    }
+}
+let num = prompt("Enter a number: ");
+if(num<=0){
+        console.log("Enter a positive number");
+    }
+else{
+    let result = factorial(num)
+console.log(result)
+}
+
+29) //Hello World!
+
+//dlroW olleH!
+
+30) duplicate  of array of object?
+const books = [
+    { title: "C++", author: "Bjarne" },
+    { title: "Java", author: "James" },
+    { title: "Python", author: "Guido" },
+    { title: "Java", author: "James" },
+];
+ 
+const unique = books.filter((obj, index) => {
+    return index === books.findIndex(o => obj.title === o.title);
+});
+ 
+console.log(unique);

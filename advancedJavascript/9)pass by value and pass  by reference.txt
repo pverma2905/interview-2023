@@ -1,0 +1,28 @@
+pass by value used in primitive type
+
+ex: 
+let a=5;
+let b=a;
+console.log(b+5);
+console.log(a)
+
+pass by refrence used in non primitive type  both access a same memeory
+
+const obj1 = {
+    user:"thapa",
+    pass:"password"
+}
+
+const obj2 = obj1;
+
+obj2.pass= "aaaaa";
+
+console.log(obj1)
+console.log(obj2)
+
+const arr1 = [1,2,3,4];
+const arr2= [].concat(arr1);
+
+arr2.push(5);
+console.log(arr1)
+console.log(arr2)

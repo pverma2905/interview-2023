@@ -1,0 +1,28 @@
+1)what is route 53?
+it is a dns as a  service
+it provide a domain name and hosting solution
+aws provide domain name u purchase.
+
+in this 2 things:-
+=>domain registration
+=>hosted zone
+=>it also support for health check of application
+
+
+After come to hosted zone
+2)what is dns?
+it convert domain name  to particular ip address
+
+3)domain name?
+like google.com
+will buy from godady,aws- route 53
+
+4)hosted zone?
+for hosting application after buying domain name go to hosted zone for configuration
+
+it is private and public hosted zone
+
+it look for dns records
+
+2)why route53?
+

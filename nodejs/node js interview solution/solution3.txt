@@ -1,0 +1,54 @@
+21)security implementation that are present in node js?
+1)error handling
+2)security piplines
+3)helmet
+
+22)what is libuv?
+
+23)differnce b/w spawn and fork?
+spawn->
+Create a streaming interface. Useful for continuous data transfer in binary / encoded format.
+Does not create a new v8 instance.
+child_process.spawn creates a new process from scratch
+
+Fork->
+Create communication channel b/w parent and child process. Useful for sending individual messages in json/xml.
+Create a new v8 instance.
+child_process.Fork creates a child process that is a copy of the parent process
+
+24)differnce b/w exec, fork, spawn?
+Exec is used to execute a command in a child process, while fork and spawn are used to create new child processes.
+Exec requires a shell environment, while fork and spawn can use a Node.js environment.
+Fork creates a child process that is a copy of the parent process, while spawn creates a new process from scratch.
+Exec is typically used for short-lived processes, while fork and spawn are typically used for long-lived processes.
+Exec allows for capturing the child process’s output and error streams, while fork and spawn stream the output and error streams back to the parent process.
+Fork allows for IPC between the parent and child processes, while exec and spawn do not.
+
+24)middleware in node js?
+
+
+25)why is assert used in node js?
+The Node.js Assert is a way to write tests. It provides no feedback when running your test unless one fails. The assert module provides a simple set of assertion tests that can be used to test invariants. The module is intended for internal use by Node.js, but can be used in application code via require ('assert').
+
+var assert = require('assert');    
+function add (a, b) {    
+  return a + b;    
+}    
+var expected = add(1,2);    
+assert( expected === 3, 'one plus two is three');  
+
+26)what are stub in node js?
+
+27) why buffer class use in node js
+
+28)what is the use of connect module in node js?
+
+29)what are the stream in node js?
+The Streams are the objects that facilitate you to read data from a source and write data to a destination. There are four types of streams in Node.js:
+
+Readable: This stream is used for reading operations.
+Writable: This stream is used for write operations.
+Duplex: This stream can be used for both reading and write operations.
+Transform: It is a type of duplex stream where the output computes according to input.
+
+30)type os stream available in node js?

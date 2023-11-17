@@ -1,0 +1,188 @@
+1)how many ways create object in javascript?
+there are four ways to create an object:-
+(i)Create a single object, using an object literal.
+
+   const person = {};
+   person.firstName = "John";
+   person.lastName = "Doe";
+   person.age = 50;
+   person.eyeColor = "blue";
+Create a single object, with the keyword new.
+    const person = new Object();
+    person.firstName = "John";
+    person.lastName = "Doe";
+    person.age = 50;
+    person.eyeColor = "blue";
+(iii)Define an object constructor, and then create objects of the constructed type.?
+    // program to create JavaScript object using instance of an object
+
+function Person() {
+    this.name = 'John',
+    this.age = 20,
+    this.hobbies = ['reading', 'games', 'coding'],
+    this.greet = function() {
+        console.log('Hello everyone.');
+    },
+    this.score = {
+        maths: 90,
+        science: 80
+    }
+
+}
+
+const person = new Person();
+
+console.log(typeof person); // object
+
+// accessing the object value
+console.log(person.name);
+console.log(person.hobbies[0]);
+person.greet();
+console.log(person.score.maths);
+
+
+(iv)Create an object using Object.create().
+    const coder = {
+    isStudying : false,
+    printIntroduction : function(){
+        console.log(`My name is ${this.name}. Am I studying?: ${this.isStudying}`);
+    }
+};
+const me = Object.create(coder);
+me.name = 'Mukul';
+me.isStudying = true;
+me.printIntroduction();
+
+
+2)Hosting?
+
+(i)variable hositing
+
+var name = "John"; //local variable within global scope
+surname = "Maria"; //global variable within global scope
+
+function Fn() {
+  console.log(name); // John
+  console.log(surname); // Maria
+}
+
+function Fn2() {
+  //implicit top declaration: var name; 
+  console.log(name); // undefined
+  console.log(surname); // Maria
+  var name = "Richard"; //local variable within function scope Fn2
+  console.log(name); // Richard
+}
+
+Fn(); Fn2();
+
+(ii)function hosting
+console.log(Fn());  // 1
+function Fn() {return 1;};
+console.log(Fn());  // 1
+
+3)Closure?
+
+inner function can access the variable, parameter of outer function.
+It is combination of function with lexical scoping
+
+ex)
+const outerFunction(a){
+    let b=10;
+    const innerFunction(){
+        let sum = a+b;
+        console.log(sum);
+    }
+    return innerFunction;
+}
+let result = outerFunction(5);
+result();
+
+4)How event flow in javascript?
+5)Null & undefined?
+null->assign a value is null. it represent a no value
+let c=null;
+console.log(c); // null
+console.log(typeof(c)); // object
+
+undefined-> variable is declare but not assign
+let x;
+console.log(x); // undefined
+typeof(x) // undefined
+
+
+
+6)Is javascript is synchronous  or not synchronous?
+synchronous
+one task execute at a time
+
+asynchrous:->
+multiple task execute at atime
+
+
+7)State of promises And methods of promises?
+//https://www.programiz.com/javascript/promise
+three state are there:-
+1)pending
+2)fullfiled
+3)rejected
+
+methods:-
+1)promise.all
+2)promise.allSettled()
+3)promise.Any()
+4)promise.race()
+5)promise.reject()
+6)promise.resolve()
+7)promise.catch()
+8)promise.then()
+9)promise.finally()
+
+8)call, bind, Apply?
+
+let userDetails1 = {
+    name:"anil",
+    age:28,
+    desination:"software",
+   
+}
+ let printDetails=function(state, country){
+     //console.log(this)
+        console.log(this.name+" "+state+" "+country)
+    }
+
+printDetails()
+
+let userDetails2 = {
+    name:"akash",
+    age:29,
+    desination:"software"
+}
+printDetails.call(userDetails1,'delhi','india')
+printDetails.call(userDetails2,'delhi','india')
+printDetails.apply(userDetails1,['delhi','india'])
+printDetails.apply(userDetails2,['delhi','india'])
+let res1=printDetails.bind(userDetails1,'delhi','india')
+res1()
+let res2=printDetails.bind(userDetails2,'delhi','india')
+res2()
+
+
+
+9) lexical scoping?
+inner function can access the variable, parameter of outer function
+
+ex)
+const outerFunction(a){
+    let b=10;
+    const innerFunction(){
+        let sum = a+b;
+        console.log(sum);
+    }
+    innerFunction();
+}
+outerFunction(5);
+
+10)type corision?
+automatic conversion of values from one data type to another data type.
+

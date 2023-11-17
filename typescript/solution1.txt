@@ -1,0 +1,23 @@
+1)unknown in typescript?
+2)readonly in typescript?
+3)datatype in typescript?
+primitive:-
+1=>boolen
+2=>number
+3=>string
+4=>void
+5=>Null
+6=>Undefined
+7=>never
+8=>any
+
+Non primitive:-
+1=>Object
+2=>array
+3=>tuple
+4=>enum
+5=>unknown
+6=>Object 
+7=>class
+8=>interface
+9=>function

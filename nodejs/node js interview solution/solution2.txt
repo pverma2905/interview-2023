@@ -1,0 +1,36 @@
+11)where is node js used?
+node js used in 
+1)web application
+2)chat application 
+3)network application
+
+12)why node js is single threaded?
+
+13)differnt api support for node js?
+synchronous api: non blocking api
+asynchronous api: blocking api
+
+14) differnce b/w synchronous and asynchronous function?
+
+15)why node js is so popular these days?
+
+16)event loop in node js?
+
+17) disadvantge of node js?
+not suitable for heavy computational task.
+
+18)what is primary reason to use event based  model in node js?
+
+
+19)what is event driven programming in node js?
+
+
+
+20) differnce b/w ajax and node js?
+Ajax:
+1)client side programming language
+2)execute on browser
+
+node js:
+1)server side scripting language
+2)execute on server

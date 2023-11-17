@@ -1,0 +1,16 @@
+https://www.youtube.com/shorts/ObDyfbumD2Y
+
+1)at
+2)push
+3)pop
+4)shift
+5)unshift
+6)join(array to string)
+7)reverse
+8)includes
+9)map 
+10)filter 
+11)find 
+12)every 
+13)findIndex 
+14)reduce 

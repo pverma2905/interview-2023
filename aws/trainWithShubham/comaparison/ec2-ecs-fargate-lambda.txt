@@ -1,0 +1,16 @@
+
+
+1)EC2=>(IAAS)<ECS
+
+2)Elastic Container Service:->Container as a Service
+limitation:-
+
+3)fargate:-(platform as  a service)
+1=>no need of additional infrastructure cost
+
+4)lambda->it is a lambda function call as a event
+
+
+
+Lambda spend less cost for infrastructure  
+EC2<ECS<Fargate<Lambda

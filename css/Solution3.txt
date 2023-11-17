@@ -1,0 +1,10 @@
+1)Use of mixin what are different css library u have used?
+2)Difference b/w id and class?
+3)Difference b/w inline element and block level element?
+4)How many ways to define style?
+5)What is selector?
+6)What are Combinators?
+7)Difference b/w visibility:hidden and display:none?
+8)Z-index?
+9)What is aspect ratio?
+10)What is self closing tag?

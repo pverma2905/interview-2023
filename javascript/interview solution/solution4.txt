@@ -1,0 +1,155 @@
+1)deep copy and shallow copy?(Tech mentor tutorials)
+shallow copy ->when a refrence variable is copy to new refrence variable using aassignment operator.
+same memory is allocate to both variable;
+ex)let emp={
+    id:123,
+    name:"pranav"
+} 
+
+let newEmp1=emp
+newEmp1.age=30
+console.log(newEmp1)
+console.log(emp)
+
+
+
+deep copy-> make seprate memory copy to new variable
+ex)let emp={
+    id:123,
+    name:"pranav"
+} 
+
+let newEmp1=JSON.parse(JSON.stringify(emp))
+newEmp1.age=30
+console.log(newEmp1)
+console.log(emp)
+
+
+2)call by value and call by refrence?
+call by value :-
+It work on primitive data type
+
+
+call by refrence:-
+It work on non primitive data type
+
+3)pure and impure function in javascript?
+pure function is accept a input and return a value without modifying the output always return same value.
+same out put
+var x=10;
+function counter(x){
+    x++
+   console.log(x)
+}
+
+counter(x)
+counter(x)
+
+impure functon:- change outside value .change output
+var x=10;
+function counter(){
+    x++
+   console.log(x)
+}
+
+counter()
+counter()
+
+4)promise.race and promise.any?
+
+5)promise.all and promise.allSettled?
+promise.all is reject if any one is rejected
+
+promise.allSettled is not rejected
+
+
+
+3)throttling?
+4)async-await?
+5)promise chaining?
+6)null coalescing?
+7)object.freeze?
+8)call stack?
+9)event loop?
+10)micro and macro queue?
+ex)
+console.log("program starts")
+
+setTimeout(()=>{
+    console.log('I am a set timeout')
+},1000) //// macro task
+
+Promise.resolve().then(val=>{
+    console.log("promise output")
+})    ////micro task. 
+
+console.log("program ends")
+
+micro task queue execute in micro queue
+macro task queue execute in call back queue
+
+
+11)generators in javascript?
+which function we stop and resume the execution.
+by using yeild("vvv"); we stop execution
+by using function name().next() we resume function
+
+12)uses of clousure? in real time?
+13)differnce b/w localStorage session storage and cookies?
+14)readonly object?
+15)differnce b/w map and flatmap?
+
+map-flat->
+const numbers=[1,2,3,4];
+const res=numbers.map((num)=>[num,num*2]).flat()
+console.log(res)
+
+flatMap->
+ const numbers=[1,2,3,4];
+ const res=numbers.flatMap((num)=>[num,num*2])
+ console.log(res)
+
+16)differnce b/w flat and flatmap?
+
+flat => it did subarray to array
+flatMap=> did two operation map and flat both
+
+17)Object.freeze() and  Object.seal()?
+
+18)prototype in javascript?
+
+19)event loop ?
+it transfer a request from callback queue/macro queue to call stack
+
+20)modules in javascript?
+import 
+export
+
+<script type="module" src="./file1.js"></script>
+
+
+
+21)map and forEach?
+
+22)clousure example?
+
+23)data type in javascript?
+primitive:-
+1=>number
+2=>string
+3=>undefined
+4=>boolean
+5=>null
+6=>bigInt
+7=>symbol
+
+non-primitive:-
+1=>array
+2=>object
+
+
+
+
+
+
+

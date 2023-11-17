@@ -1,0 +1,3 @@
+Scope Chain :-> it resolve the value of variable name in javascript
+
+lexically scope->Inner function get access the property of parent function.but vice versa is not possible  

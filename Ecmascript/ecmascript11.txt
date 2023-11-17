@@ -1,0 +1,2 @@
+1)nullish coalescing
+2)promise.allSettled

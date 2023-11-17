@@ -1,0 +1,73 @@
+1)what is vpc?
+It is provide a security
+it provide virtual private cloud in public
+2)why we need vpc?
+for security
+3)what are the different component of vpc?
+=> internet gate way
+=> public subnet
+=> load balancer
+=> route table 
+=> security group 
+4)components interact each other?
+5)define size of vpc ?
+by ip address range
+6)subnet?
+divide the ip address range to multiple project / subnet to share ip address
+7)nacl?
+it is network access control list
+same security group is assign
+apply security in  subnet level
+it is configure for allowing and denying
+8)nat?
+masking of ip address
+it help to download the resource from internet 
+9)security group?
+apply security for ec2 side
+it is configure for allowing
+10)security group are type?
+1)inbound group?
+to access the site and deployment url we enable the particular port
+it not allow anything
+ifu want to allow specific port no and ip address where traffic is accepted
+2)outbound group?
+to access the site internal use multiple site 
+by default it allow everything is 0.0.0.0 except port 25
+aws use mailing service in port 25
+
+Steps to create VPC:->
+
+1)go to vpc and more
+=> give name: vpc
+=> create
+
+
+2)create ec2(subnet)
+=>launch instance
+=> flavour of ubuntu
+=> network setting
+=> change default vpc to demo vpc
+=> choose public subnet
+=> auto assignable ip : enable
+=> launch instance
+
+3)open terminal using ssh
+=>sudo apt update
+=>python3
+=>exit()
+=>python3 -m http.server 8000
+
+4)go to instance and enable inbound ip for port no 8000
+
+check all working
+
+3)change nacl permission for port and ip
+=> go to vpc => nacl
+=> select demo vpc
+=>edit inbound rule
+=> by default all trafic is allowing
+=>change rule to deny permission of 8000
+then check not working
+=> change rule to all allow and then deny 8000 is working 
+
+

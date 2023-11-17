@@ -1,0 +1,87 @@
+1)AWS IAM:-
+
+by default have root access 
+which is doing authentication, authorization, 
+according to role access
+
+example:-
+a employee want a access to particular service, s3, read access to db,kubernetes  services 
+go to iam service there we create a user of 501. 
+provide a access the service by the use of policies
+using this user id and password share to employee
+after login they are not deleted anything in db.
+Reason u give the permission of read access
+by using this we can authenticate and authorize by using iam services
+
+2)why we have users, policies, groups, Roles?
+
+users:-it come to under authentication part 
+policies:- what the user can do attach the policies (for granting the services), authorize
+
+example: Suppose there  4 type of people in the company.
+developer, qa, db admin, other
+send the jira  request .tell  me the your group.
+so we create a user. put them into particular group
+
+groups:- improve the efficiencies .
+
+Roles:- 
+it is similar to user 
+it is a temporary purpose.
+use this role access the application outside aws application  
+it is also use to communication of multiple aws account
+
+Practical:-
+1)Create User only not attaching policies and group:-
+select iam -> select users -> add user -> test-user-501 
+-> provide console access -> i want to create a user -> auto generated password 
+-> user must create a password -> next
+
+->add user to group -> next
+-> by default aws provide one policy to change password ->create user
+
+
+-> signout
+->login to iam user
+->paste the account id
+-> paste username and password
+
+2)Create User and attaching policies not group:-
+select iam -> select users -> add user -> test-user-501 
+-> provide console access -> i want to create a user -> auto generated password 
+-> user must create a password -> next 
+
+->attach policies directly -> S3 full access ->next
+-> by default aws provide one policy to change password ->create user
+
+
+-> signout
+->login to iam user
+->paste the account id
+-> paste username and password
+
+
+3)Create Group :-
+select iam-> select user groups-> development-group->
+Add permission-> s3 full access-> create group
+select development-group -> add user->check box check for particular user->
+
+add one more permission->select group -> click on permission tab ->add permission
+-> add ec2 full access 
+
+
+
+custom policies:->
+version:"",
+statement:{
+    {
+        Effect:"",
+        Action:[
+            "s3:*",
+            "s3-object-lambda:*"   
+        ],
+        Resource:"*"
+    }
+
+}
+

@@ -1,0 +1,9 @@
+1)abstract class vs interface?
+abstract class-> it used in inheritence override the child class functionality
+
+interface-> implement the child class
+
+2)polymorphism?
+two type:-
+1)compile time polymorphism:-overloading
+2)run time polymorphism:-overriding

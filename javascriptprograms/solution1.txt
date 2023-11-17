@@ -1,0 +1,92 @@
+1) count each occurring character?
+function countChar(x){
+strObj={};    
+for(let i=0;i<x.length; i++){
+    let key=x[i]
+    if(!strObj[key]){
+        strObj[key]=1
+    }else{
+        strObj[key]++
+    }
+}
+  console.log(strObj)  
+    
+    
+}
+countChar("pranavverma")
+
+2)infinite curring?
+
+function add(a){
+    return function(b){
+        if(b){
+         return add(a+b);   
+        }else{
+            return a;
+        }
+    }
+}
+
+let res = add(2)(4)(7)()
+console.log(res)
+
+3) find maximum element ?
+arr=[1,2,3,5];
+
+console.log(Math.max(...arr));
+
+4)find minimum element?
+arr=[1,2,3,5];
+
+console.log(Math.min(...arr));
+
+5)assending sort?
+arr=[1,7,3,9,4];
+let res = arr.sort((a,b)=>{
+    return(a-b)
+})
+console.log(res)
+
+6)desending order?
+arr=[1,7,3,9,4];
+let res = arr.sort((a,b)=>{
+    return(b-a)
+})
+console.log(res)
+
+7)second highest?
+I->
+arr=[1,2,3,4,5];
+high=Math.max(...arr);
+arr.splice(arr.indexOf(high),1)
+console.log(Math.max(...arr))
+
+II-> 
+arr=[1,2,3,4,5];
+let res = arr.sort((a,b)=>{
+    return(b-a)
+})
+console.log(res[1])
+
+8)remove an element an array?
+arr=[1,2,3,4,5];
+//remove->3
+arr.splice(arr.indexOf(3),1);
+console.log(arr)
+
+9)reverse no?
+arr=[1,2,3,4,5];
+console.log(arr.reverse())
+
+10) array to string?
+var array = [1,2,4];
+console.log(typeof(array.toString()))?
+
+
+
+
+
+
+
+
+

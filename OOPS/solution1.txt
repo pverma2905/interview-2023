@@ -1,0 +1,30 @@
+1)design pattern?
+(i)Creational Design Patterns
+    Singleton Pattern
+    Factory Method Pattern
+    Abstract Factory Pattern
+    Builder Pattern
+    Prototype Pattern
+(ii)Structural Design Patterns
+    Adapter Pattern
+    Decorator Pattern
+    Facade Pattern
+    Proxy Pattern
+(iii)Behavioral Design Patterns
+    Chain of Responsibility Pattern
+    Iterator Pattern
+    Observer Pattern
+
+2)Solid principle?
+https://www.baeldung.com/solid-principles
+
+3)inheritence type in javascript?
+(i) Prototypal Inheritance
+(ii) Pseudo-classical Inheritance
+(iii) Functional Inheritance
+
+4) What is inheritence?
+5) what is class?
+6) what is overloading
+7) what is overridding?
+8)what is polymorphism?

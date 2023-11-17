@@ -1,0 +1,2 @@
+1)array.flat()
+2)flatMap()

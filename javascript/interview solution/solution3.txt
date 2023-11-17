@@ -1,0 +1,166 @@
+1) webworker in javascript?(code with kashi)
+#run your code in background script
+#create worker object using constructor worker
+#worker run in differnt global context
+#they can do complex operation without interfering ui
+#they can send and accept messages from ui using events
+
+var workerObj = new Worker('./filename');
+postMessage()
+onMessage()
+
+Advantage:-
+#help in complex computing/ calculation
+#does not block ui
+#optimize performance of our program
+# self is working
+
+Disadvantge:-
+#does not access parent object
+#does not access window object
+#does not access document object
+
+2)normal loading vs async loading and defer loading?(code with kashi)
+
+#normal loading:-
+once js loading start html parsing is stop; 
+
+#async loading:-
+html parsing and js loading at same time once js first load it got excuted .it not wait to load html parsing  
+
+#defer loading:-
+html parsing and js loading at same time. it wait to html parsing complete. then js execute
+
+3)Event Bubbling & capturing?(code with kashi)
+There are two phase of event propogation
+#first phase is event capturing called as event trickling (top to bottom)
+#second phase is event bubbling (bottom to top)
+addEventListener method to specify to use eventBubbling and eventCapturing.
+addEventListener take third parameter useCapture flag as boolean
+By default useCapture is false and eventBubbling by default set
+
+4)event Delegation?(code with kashi)
+to overcome the performance of application in dom tree we used event delegation
+
+5)array.reduce?(code with kashi)
+let arr=[1,2,4,6,8];
+
+1=>
+array.reduce((a,b)=>{
+    return a+b;
+},10)
+
+
+6) temporal dead zone?(code with kashi)
+console.log(a);
+let a=10;
+console.log(a);
+
+let and const host to hote  hai but we can't access reason let and const
+
+7)iife?(code with kashi)
+immediately invoked function expression
+
+it is function that run as soon as defined
+
+(function(){
+    console.log("hiiiiiiiiiiiii..")
+})()
+
+8)what is scopechain?
+scope chain is used to resolve the value  of variable name in javascript 
+first check in current function then outer and then global
+
+let a= 10;
+function one(){
+    let b=20;
+    two()
+    function two(){
+        let c=30;
+        console.log(a+b+c)
+    }
+}
+
+one()
+
+
+9)differnce b/w es5 and es6?
+es5:->
+#release 2009
+#for loop
+#data type : number,boolean,string, null, undefined
+#variable var
+#less performance
+#object manuplation is more time consuming
+#function and return keyword used to define a function
+
+es6:->
+#release 2015
+#for of
+#data type : symbol
+#variable let, const
+#more performance
+#object manuplation is taking less time consuming using spread, destrucing
+#arrow function
+
+10)higher order function?
+higher order function that take other function as an argument or return a new function and both
+ex)
+let data= [2,3,4,5];
+let x=(item)=>{
+   return item*10;
+}
+let result = data.map(x)
+console.log(result)
+
+ex)let data= [2,3,4,5];
+
+let x=((item)=>{
+   item*10;
+})
+let result = data.map(x)
+console.log(result)
+
+11)promise?(code step by step)
+
+function buyLaptop(){
+    let buyLap = new Promise((resolve, reject)=>{;
+    if(DellAvailable()){
+        resolve("Dell purchased")
+    }else{
+        reject("Laptop is not available")
+    }
+    })
+    
+    buyLap.then(res=>{
+        alert(res);
+    }).catch(res=>{
+        alert(res)
+    })
+    
+}
+
+buyLaptop()
+
+function DellAvailable(){
+    return true
+}
+
+
+
+12)lexical scope?
+inner function access the outer function variable
+ex)
+let a= 10;
+function one(){
+    let b=20;
+    two()
+    function two(){
+        let c=30;
+        console.log(a+b+c)
+    }
+}
+
+one()
+
+
