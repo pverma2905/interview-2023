@@ -73,7 +73,27 @@ arr.map((data)=>{
 })
 console.log(newArr)
 
-8)sort?
+8)find Unique without using inbuilt function?
+arr=[1,2,3,4,5,2,3,4];
+newArr=[];
+for(let i=0; i<arr.length; i++){
+    if(arr.indexOf(arr[i])==i){
+        newArr.push(arr[i])
+    }
+}
+console.log(newArr)
+
+9)find duplicate no without using inbuilt function?
+arr=[1,2,3,4,5,2,3,4];
+newArr=[];
+for(let i=0; i<arr.length; i++){
+    if(arr.indexOf(arr[i])!=i){
+        newArr.push(arr[i])
+    }
+}
+console.log(newArr)
+
+10)sort?
 let arr = [8,7,6,5];
 let swap;
 for(let i=0;i<arr.length; i++){
@@ -87,39 +107,15 @@ for(let i=0;i<arr.length; i++){
 }
 console.log(arr)
 
-9)reverse?
-function reverse(arr){
-    newArr=[];
-    for(let i=0;i<arr.length;i++){
-        newArr.push(arr[arr.length-1-i])
-    }
-    console.log(newArr)
-}
-reverse([1,2,3])
-
-10)find second highest value?
-
-function second(arr){
-    let first=-1;
-    let second=-1
-    let third=-1
-    for(let i=0; i<arr.length;i++){
-        if(arr[i]>first){
-            third=second;
-            second=first
-            first=arr[i]
-            // console.log("first",first)
-        }else if(arr[i]>second && arr[i]!=first){
-            second=arr[i]
-            
-        }else if(arr[i]>third && arr[i]!=second){
-            third=arr[i]
-        }
-        
-    }
-    console.log("fir",first)
-    console.log("sec",second)
-    console.log("third",third)
-}
-second([1,2,3,4,5])
+11)design pattern?
+1)Singleton pattern:
+The singleton pattern ensures that there is only one instance of a class. This can be useful for classes that manage resources, such as a database connection.
+2)Prototype pattern:
+The prototype pattern allows you to create objects that inherit properties and methods from a prototype object. This is similar to class-based inheritance in object-oriented programming.
+3)Observer pattern:
+The observer pattern lets you define a subscription mechanism to notify multiple objects about any events that happen to the object they're observing.
+4)Factory method pattern:
+The factory method pattern is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created.
+5)Abstract factory pattern:
+The abstract factory pattern is a creational pattern that provides an interface for creating families of related objects without specifying their concrete classes.
 

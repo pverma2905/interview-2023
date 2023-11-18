@@ -1,0 +1,185 @@
+################## Quick tech ##########################
+
+11)reverse?
+function reverse(arr){
+    newArr=[];
+    for(let i=0;i<arr.length;i++){
+        newArr.push(arr[arr.length-1-i])
+    }
+    console.log(newArr)
+}
+reverse([1,2,3])
+
+12)find second highest value?
+
+function second(arr){
+    let first=-1;
+    let second=-1
+    let third=-1
+    for(let i=0; i<arr.length;i++){
+        if(arr[i]>first){
+            third=second;
+            second=first
+            first=arr[i]
+            // console.log("first",first)
+        }else if(arr[i]>second && arr[i]!=first){
+            second=arr[i]
+            
+        }else if(arr[i]>third && arr[i]!=second){
+            third=arr[i]
+        }
+        
+    }
+    console.log("fir",first)
+    console.log("sec",second)
+    console.log("third",third)
+}
+second([1,2,3,4,5])
+
+13)shift number and string?
+
+const shift = (arr)=>{
+    let count = 0;
+    str=[];
+    for(let i=0;i<arr.length; i++){
+        if(typeof(arr[i])!=='string'){
+            arr[count++]=arr[i]
+        }else{
+            str.push(arr[i])
+        }
+    }
+    let j=0
+    while(count<arr.length){
+         arr[count++]=str[j]
+         j++
+    }
+    console.log(arr)
+}
+
+shift([1,2,3,"pranav",6,"rahul","mahesh"])
+
+14)const data = {
+    name:"pranav",
+    email:"pranav@gmail.com",
+    phone:1234567890,
+    address:{
+        street:"1234",
+        city:"hyderabad",
+        state:"telangana",
+        zip:500078
+    },
+    company:{
+        company_name:"hcl",
+        company_address:"ahex"
+    }
+}
+
+newObj={}
+const mergedObj = (d)=>{
+    
+    for(let i in d){
+        if(typeof d[i]=='object'){
+            mergedObj(data[i])
+        }else{
+            newObj[i]=data[i]
+        }
+    }
+}
+
+mergedObj(data)
+
+console.log(newObj)
+
+15)12345 convert to 54321?
+function reverse(x){
+    let y;
+    x=x.toString();
+    y=x.split("").reverse().join("")
+    console.log(parseInt(y))
+}
+
+reverse(12345)
+
+16)function regularBrackets(brackets) {
+    var equal = 0;
+    // arr = brackets.split("");
+    for (var i = 0; i < brackets.length; i++) {
+        if(brackets[i]==="[" || brackets[i]==="{" || brackets[i]==="(" ){
+        equal++    
+        }else{
+            equal--
+        }
+    }
+   
+     if(equal===0){
+    console.log(true)      
+     }else{
+         console.log(false)   
+     }   
+}
+
+regularBrackets("[{()}]")
+
+17)print 1 to 100 without loop?
+function count(start,end){
+    console.log(start)
+    if(start<end){
+        count(start+1,end)
+    }
+    return start
+}
+count(1,100)
+
+18)what is find and findIndex?
+find return first value
+findIndex return first Index
+
+19) differnce b/w function declartion and function expression?
+1)function declaration:- old declaration of function
+
+function myfun(a,b){
+    return a+b;
+}
+
+
+20)function expression:- function assign in variable
+
+const fun1 = function(){
+    return a+b;
+}
+
+20)differnce b/w function declaration and function expression?
+myfun(10,20)
+function myfun(a,b){   // 30
+    return a+b;
+}
+
+fun1(20,30)
+const fun1 = function(){  // getting reference error
+    return a+b;
+}
+
+21)difference b/w cookies vs session storage and local storage?
+cookies:-
+stored:cookies stored in browser and server
+capacity:it size is 4 kb
+acessible from: it is accessible for any window
+expire:it is expire set manual
+sent With request: yes
+support: html4, html5
+
+localstorage:-
+stored:localstorage stored in browser
+capacity:it size is 10mb
+acessible from: it is accessible for any window
+expire:never
+sent With request: no
+support: html5
+
+sessionStorage:-
+stored:sessionstorage stored in browser
+capacity:it size is 5mb
+acessible from: it is accessible for same tab
+expire:on tab close
+sent With request: no
+support: html5
